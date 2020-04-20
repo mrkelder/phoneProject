@@ -1,0 +1,1 @@
+- Command to run SCSS: sass --watch static/scss/[*].scss static/css/[*].css

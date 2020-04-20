@@ -49,15 +49,11 @@ fastify
         includeViewExtension: true
     })
     .register(require('fastify-formbody'))
+    .register(require(path.join(__dirname , '/server/route.js')))
     .ready(err => {
         fastify.checkError(err).then(() => {
             console.log('Availalbe at http://localhost:8080');
         })
     });
-    
-
-fastify.get('/', (req, reply) => {
-    reply.send('Hello world!');
-});
 
 fastify.listen(8080);
