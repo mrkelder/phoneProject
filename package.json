@@ -1,0 +1,29 @@
+{
+  "name": "phoneshop",
+  "version": "0.0.1",
+  "description": "my phone shop like rozetka or eldarado",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrkelder/phoneProject.git"
+  },
+  "keywords": [
+    "phone",
+    "shop",
+    "xiaomi",
+    "iphone",
+    "samsung"
+  ],
+  "author": "Vlad A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrkelder/phoneProject/issues"
+  },
+  "homepage": "https://github.com/mrkelder/phoneProject#readme",
+  "dependencies": {
+    "fastify": "^2.13.1"
+  }
+}
