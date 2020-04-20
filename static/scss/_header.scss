@@ -1,7 +1,7 @@
-#desktopHeader{
+#desktopHeader {
     display: none;
 }
-#mobileHeader{
+#mobileHeader {
     display: flex;
     background-color: $white;
     height: 50px;
@@ -9,34 +9,49 @@
     box-sizing: border-box;
     align-items: center;
     justify-content: space-around;
-    #logo{
-        width: 35px;
-        height: 35px;
-        img{
-            width: 100%;
-            height: 100%;
+    #mobileSection1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #logo {
+            width: 35px;
+            height: 35px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        #mobileCatalog {
+            margin-left: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            img {
+                width: 15px;
+                height: 15px;
+            }
+            span {
+                color: $red;
+                margin-left: 5px;
+            }
         }
     }
-    #mobileCatalog{
+    // .gap{
+    //     width: 100%;
+    // }
+    #mobileSection2 {
         display: flex;
         justify-content: center;
-        align-items: center;
-        height: 50px;   
-        img{
-            width: 15px;
-            height: 15px;
+        align-items: cneter;
+        #searchIcon {
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
         }
-        span{
-            color: $red;
-            margin-left: 5px;
+        #menuButton {
+            width: 20px;
+            height: 20px;
         }
-    }
-    #searchIcon{
-        width: 25px;
-        height: 25px;
-    }
-    #menuButton{
-        width: 20px;
-        height: 20px;
     }
 }

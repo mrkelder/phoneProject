@@ -21,33 +21,45 @@ button {
   align-items: center;
   justify-content: space-around;
 }
-#mobileHeader #logo {
+#mobileHeader #mobileSection1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mobileHeader #mobileSection1 #logo {
   width: 35px;
   height: 35px;
 }
-#mobileHeader #logo img {
+#mobileHeader #mobileSection1 #logo img {
   width: 100%;
   height: 100%;
 }
-#mobileHeader #mobileCatalog {
+#mobileHeader #mobileSection1 #mobileCatalog {
+  margin-left: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
 }
-#mobileHeader #mobileCatalog img {
+#mobileHeader #mobileSection1 #mobileCatalog img {
   width: 15px;
   height: 15px;
 }
-#mobileHeader #mobileCatalog span {
+#mobileHeader #mobileSection1 #mobileCatalog span {
   color: #e60000;
   margin-left: 5px;
 }
-#mobileHeader #searchIcon {
+#mobileHeader #mobileSection2 {
+  display: flex;
+  justify-content: center;
+  align-items: cneter;
+}
+#mobileHeader #mobileSection2 #searchIcon {
   width: 25px;
   height: 25px;
+  margin-right: 15px;
 }
-#mobileHeader #menuButton {
+#mobileHeader #mobileSection2 #menuButton {
   width: 20px;
   height: 20px;
 }
