@@ -4,7 +4,7 @@
   "description": "my phone shop like rozetka or eldarado",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "sass": "sass --watch static/scss:static/css"
   },
   "repository": {
     "type": "git",
