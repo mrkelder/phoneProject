@@ -5,11 +5,19 @@ $light_grey: #f4f4f4;
 $text_grey: #333;
 $text_light_grey: #999;
 
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: $light_grey;
 }
-button{
+button {
     outline: none;
 }
+
+@mixin bg {
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@import "header";

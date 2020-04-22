@@ -10,8 +10,39 @@ header
         #mobileSection2
             img(src="/img/files/search.svg", alt="search")#searchIcon
             img(src="/img/files/menu.svg", alt="menu")#menuButton
-        //- #mobileMenu1
-        //- #mobileMenu2
+        #greyBackgound
+        side#mobileMenu1
+            #userSection
+                a(href="#") Моя учетная запись
+                button
+            hr
+            #locationSection
+                .locatonSection#mainCity
+                    .locationSign
+                    p Киев
+                .verticalDiv
+                .locatonSection#chooseLanguage
+                    p RU
+                    .arrow
+            hr
+            #options
+                each element in [{text: 'На главную' , link: '#' , icon: 'house.png'} , {text: 'Сравнение товаров' , link: '#' , icon: 'scales.png'} , {text: 'Избранные' , link: '#' , icon: 'favorite.png'} , {text: 'Корзина' , link: '#' , icon: 'bin.png'}]
+                    a(href=`${element.link}`).section
+                        div(style=`background-image: url('/img/files/${element.icon}')`)
+                        span #{element.text}
+            #links
+                a(href="#") Доставка и оплата
+                a(href="#") Гарантия
+                a(href="#") Акции
+                a(href="#") Магазины
+            .gap
+            a(href="")#hotLine
+                #mobilePhoneNubmer
+                    #helperIcon
+                    span 0 800 40 40 40
+                #callMeBack
+                    span Позвоните сейчас
+        //- nav#mobileMenu2
         //- #searchField
         //-     input(type="text")
     #desktopHeader

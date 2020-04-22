@@ -54,4 +54,162 @@
             height: 20px;
         }
     }
+    #greyBackgound {
+        // display: none;
+        background-color: #0a0a0aa1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    #mobileMenu1 {
+        display: flex;
+        // display: none;
+        flex-direction: column;
+        position: absolute;
+        width: 96vw;
+        height: 100vh;
+        background-color: $white;
+        right: 0;
+        top: 0;
+        #userSection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            padding: 2px 14px;
+            a {
+                margin-left: 30px;
+                text-decoration: none;
+                color: $text_grey;
+                &::before {
+                    content: "";
+                    width: 25px;
+                    height: 25px;
+                    background-image: url("/img/files/user.png");
+                    @include bg;
+                    position: absolute;
+                    left: 10px;
+                    top: 14px;
+                }
+            }
+            button {
+                width: 25px;
+                height: 25px;
+                border: none;
+                background-image: url("/img/files/cross.svg");
+                background-color: transparent;
+                @include bg;
+            }
+        }
+        hr {
+            margin: 0;
+            border: 0.5px solid $grey;
+        }
+        #locationSection {
+            display: flex;
+            align-items: center;
+            padding: 2px 14px;
+            .locatonSection {
+                display: flex;
+                flex: 1;
+                align-items: center;
+                height: 45px;
+                p {
+                    margin: 0;
+                    margin-left: 10px;
+                }
+            }
+            .verticalDiv {
+                width: 0.8px;
+                height: 20.8px;
+                background-color: $grey;
+            }
+            #mainCity {
+                .locationSign {
+                    width: 20px;
+                    height: 20px;
+                    @include bg;
+                    background-image: url("/img/files/location.png");
+                }
+            }
+            #chooseLanguage {
+                display: flex;
+                justify-content: space-between;
+                .arrow {
+                    width: 14px;
+                    height: 14px;
+                    @include bg;
+                    background-image: url("/img/files/arrow.png");
+                }
+            }
+        }
+        #options {
+            display: flex;
+            flex-direction: column;
+            .section{
+                display: flex;
+                align-items: center;
+                height: 45px;
+                padding: 0 14px;
+                text-decoration: none;
+                color: $text_grey;
+                div{
+                    width: 20px;
+                    height: 20px;
+                    @include bg;
+                }
+                span {
+                    margin: 0;
+                    margin-left: 10px;
+                }
+            }
+        }
+        #links{
+            display: flex;
+            flex-direction: column;
+            background-color: $light_grey;
+            padding: 15px 45px;
+            a{
+                color: $text_grey;
+                text-decoration: none;
+                height: 40px;
+                display: flex;
+                align-items: center;
+            }
+        }
+        #hotLine{
+            text-decoration: none;
+            margin-top: auto;
+            display: flex;
+            height: 45px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 14px;
+            #mobilePhoneNubmer{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                #helperIcon{
+                    width: 20px;
+                    height: 20px;
+                    @include bg;
+                    margin-right: 5px;
+                    background-image: url('/img/files/helper.png');
+                }
+                span{
+                    color: $text_grey;
+                    font-size: 14px;
+                }
+            }
+            #callMeBack{
+                span{
+                    color: $text_grey;
+                    font-size: 14px;
+                    color: $red;
+                }
+            }
+        }
+    }
 }
