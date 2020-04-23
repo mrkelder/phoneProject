@@ -72,7 +72,7 @@ button {
   height: 100vh;
 }
 #mobileHeader #mobileMenu1 {
-  display: flex;
+  display: none;
   flex-direction: column;
   position: absolute;
   width: 96vw;
@@ -226,6 +226,73 @@ button {
   color: #333;
   font-size: 14px;
   color: #e60000;
+}
+#mobileHeader #catalog {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 95vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#mobileHeader #catalog #headerOfCatalog {
+  display: flex;
+  background-color: #e60000;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+#mobileHeader #catalog #headerOfCatalog button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-image: url("/img/files/cross.svg");
+  background-color: transparent;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/img/files/crossWhite.svg");
+  position: absolute;
+  left: 15px;
+}
+#mobileHeader #catalog #headerOfCatalog h3 {
+  color: white;
+}
+#mobileHeader #catalog .catalogElement {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 15px;
+}
+#mobileHeader #catalog .catalogElement span {
+  flex: 1;
+  text-align: center;
+  color: #333;
+}
+#mobileHeader #catalog .catalogElement .cotalogPhoto {
+  width: 25px;
+  height: 25px;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#mobileHeader #catalog .catalogElement .toCatalogElement {
+  width: 15px;
+  height: 15px;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/img/files/arrow.png");
+  transform: rotate(-90deg);
+}
+#mobileHeader #catalog hr {
+  background-color: #4a4d4e;
+  border: none;
+  height: 1px;
+  margin: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

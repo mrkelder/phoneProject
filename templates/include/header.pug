@@ -35,14 +35,22 @@ header
                 a(href="#") Гарантия
                 a(href="#") Акции
                 a(href="#") Магазины
-            .gap
             a(href="")#hotLine
                 #mobilePhoneNubmer
                     #helperIcon
                     span 0 800 40 40 40
                 #callMeBack
                     span Позвоните сейчас
-        //- nav#mobileMenu2
+        nav#catalog
+            #headerOfCatalog
+                button
+                h3 Каталог товаров
+            each i in [{text: 'Телефоны' , img: '/img/files/phone.png' , link: '#'} , {text: 'Ноутбуки , планшеты , ПК' , img: '/img/files/laptop.png' , link: '#'} , {text: 'Часы' , img: '/img/files/watch.png' , link: '#'} , {text: 'ТВ' , img: '/img/files/tv.png' , link: '#'},{text: 'Наушники' , img: '/img/files/earphone.png' , link: '#'}]
+                a(href=`${i.link}`).catalogElement
+                    div(style=`background-image: url('${i.img}')`).cotalogPhoto
+                    span #{i.text}
+                    .toCatalogElement
+                hr
         //- #searchField
         //-     input(type="text")
     #desktopHeader

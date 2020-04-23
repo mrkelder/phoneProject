@@ -37,9 +37,6 @@
             }
         }
     }
-    // .gap{
-    //     width: 100%;
-    // }
     #mobileSection2 {
         display: flex;
         justify-content: center;
@@ -64,8 +61,8 @@
         height: 100vh;
     }
     #mobileMenu1 {
-        display: flex;
-        // display: none;
+        // display: flex;
+        display: none;
         flex-direction: column;
         position: absolute;
         width: 96vw;
@@ -95,12 +92,7 @@
                 }
             }
             button {
-                width: 25px;
-                height: 25px;
-                border: none;
-                background-image: url("/img/files/cross.svg");
-                background-color: transparent;
-                @include bg;
+                @include crossBtn;
             }
         }
         hr {
@@ -148,14 +140,14 @@
         #options {
             display: flex;
             flex-direction: column;
-            .section{
+            .section {
                 display: flex;
                 align-items: center;
                 height: 45px;
                 padding: 0 14px;
                 text-decoration: none;
                 color: $text_grey;
-                div{
+                div {
                     width: 20px;
                     height: 20px;
                     @include bg;
@@ -166,12 +158,12 @@
                 }
             }
         }
-        #links{
+        #links {
             display: flex;
             flex-direction: column;
             background-color: $light_grey;
             padding: 15px 45px;
-            a{
+            a {
                 color: $text_grey;
                 text-decoration: none;
                 height: 40px;
@@ -179,7 +171,7 @@
                 align-items: center;
             }
         }
-        #hotLine{
+        #hotLine {
             text-decoration: none;
             margin-top: auto;
             display: flex;
@@ -187,29 +179,85 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 14px;
-            #mobilePhoneNubmer{
+            #mobilePhoneNubmer {
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
-                #helperIcon{
+                #helperIcon {
                     width: 20px;
                     height: 20px;
                     @include bg;
                     margin-right: 5px;
-                    background-image: url('/img/files/helper.png');
+                    background-image: url("/img/files/helper.png");
                 }
-                span{
+                span {
                     color: $text_grey;
                     font-size: 14px;
                 }
             }
-            #callMeBack{
-                span{
+            #callMeBack {
+                span {
                     color: $text_grey;
                     font-size: 14px;
                     color: $red;
                 }
             }
+        }
+    }
+    #catalog {
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        width: 95vw;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        top: 0;
+        #headerOfCatalog {
+            display: flex;
+            background-color: $red;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            button {
+                @include crossBtn;
+                background-image: url("/img/files/crossWhite.svg");
+                position: absolute;
+                left: 15px;
+            }
+            h3 {
+                color: $white;
+            }
+        }
+        .catalogElement {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            padding: 0 15px;
+            span {
+                flex: 1;
+                text-align: center;
+                color: $text_grey;
+            }
+            .cotalogPhoto {
+                width: 25px;
+                height: 25px;
+                @include bg;
+            }
+            .toCatalogElement {
+                width: 15px;
+                height: 15px;
+                @include bg;
+                background-image: url("/img/files/arrow.png");
+                transform: rotate(-90deg);
+            }
+        }
+        hr {
+            background-color: $grey;
+            border: none;
+            height: 1px;
+            margin: 0;
         }
     }
 }

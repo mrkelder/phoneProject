@@ -1,1 +1,1 @@
-- Command to run SCSS: sass --watch static/scss/[*].scss static/css/[*].css
+- Command to run SCSS: npm run sass

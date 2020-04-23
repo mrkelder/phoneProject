@@ -20,4 +20,13 @@ button {
     background-repeat: no-repeat;
 }
 
+@mixin crossBtn {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-image: url("/img/files/cross.svg");
+    background-color: transparent;
+    @include bg;
+}
+
 @import "header";
