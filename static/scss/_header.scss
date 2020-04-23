@@ -60,6 +60,11 @@
         width: 100vw;
         height: 100vh;
     }
+    .verticalDiv {
+        width: 0.8px;
+        height: 20.8px;
+        background-color: $grey;
+    }
     #mobileMenu1 {
         // display: flex;
         display: none;
@@ -112,11 +117,6 @@
                     margin: 0;
                     margin-left: 10px;
                 }
-            }
-            .verticalDiv {
-                width: 0.8px;
-                height: 20.8px;
-                background-color: $grey;
             }
             #mainCity {
                 .locationSign {
@@ -205,7 +205,8 @@
         }
     }
     #catalog {
-        display: flex;
+        display: none;
+        // display: flex;
         flex-direction: column;
         background-color: $white;
         width: 95vw;
@@ -258,6 +259,35 @@
             border: none;
             height: 1px;
             margin: 0;
+        }
+    }
+    #searchField{
+        padding: 10px 15px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 50px;
+        background-color: $white;
+        #searchText{
+            flex: 1;
+            border: none;
+            outline: none;
+        }
+        #searchReset{
+            @include crossBtn;
+            background-image: url('/img/files/crossRed.svg');
+            outline: none;
+            margin: 0 5px;
+        }
+        #searchSubmit{
+            margin: 0 5px;
+            @include crossBtn;
+            background-image: url('/img/files/search.svg');
+            outline: none;
         }
     }
 }

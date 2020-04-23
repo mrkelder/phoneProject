@@ -71,6 +71,11 @@ button {
   width: 100vw;
   height: 100vh;
 }
+#mobileHeader .verticalDiv {
+  width: 0.8px;
+  height: 20.8px;
+  background-color: #4a4d4e;
+}
 #mobileHeader #mobileMenu1 {
   display: none;
   flex-direction: column;
@@ -133,11 +138,6 @@ button {
 #mobileHeader #mobileMenu1 #locationSection .locatonSection p {
   margin: 0;
   margin-left: 10px;
-}
-#mobileHeader #mobileMenu1 #locationSection .verticalDiv {
-  width: 0.8px;
-  height: 20.8px;
-  background-color: #4a4d4e;
 }
 #mobileHeader #mobileMenu1 #locationSection #mainCity .locationSign {
   width: 20px;
@@ -228,7 +228,7 @@ button {
   color: #e60000;
 }
 #mobileHeader #catalog {
-  display: flex;
+  display: none;
   flex-direction: column;
   background-color: white;
   width: 95vw;
@@ -293,6 +293,49 @@ button {
   border: none;
   height: 1px;
   margin: 0;
+}
+#mobileHeader #searchField {
+  padding: 10px 15px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: white;
+}
+#mobileHeader #searchField #searchText {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+#mobileHeader #searchField #searchReset {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-image: url("/img/files/cross.svg");
+  background-color: transparent;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/img/files/crossRed.svg");
+  outline: none;
+  margin: 0 5px;
+}
+#mobileHeader #searchField #searchSubmit {
+  margin: 0 5px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-image: url("/img/files/cross.svg");
+  background-color: transparent;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/img/files/search.svg");
+  outline: none;
 }
 
 /*# sourceMappingURL=index.css.map */

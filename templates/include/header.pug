@@ -51,8 +51,11 @@ header
                     span #{i.text}
                     .toCatalogElement
                 hr
-        //- #searchField
-        //-     input(type="text")
+        form#searchField
+            input(type="text" placeholder="Поиск")#searchText
+            input(type="reset" value="")#searchReset
+            .verticalDiv
+            input(type="submit" value="")#searchSubmit
     #desktopHeader
         section
         section
