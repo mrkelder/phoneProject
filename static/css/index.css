@@ -64,6 +64,7 @@ button {
   height: 20px;
 }
 #mobileHeader #greyBackgound {
+  display: none;
   background-color: #0a0a0aa1;
   position: absolute;
   left: 0;
@@ -295,9 +296,9 @@ button {
   margin: 0;
 }
 #mobileHeader #searchField {
+  display: none;
   padding: 10px 15px;
   box-sizing: border-box;
-  display: flex;
   align-items: center;
   position: absolute;
   left: 0;

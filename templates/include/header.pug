@@ -10,11 +10,11 @@ header
         #mobileSection2
             img(src="/img/files/search.svg", alt="search")#searchIcon
             img(src="/img/files/menu.svg", alt="menu")#menuButton
-        #greyBackgound
+        div(onclick="app.closeButton('greyBackgound' , 'mobileMenu1' , 'catalog' , 'searchField')")#greyBackgound
         side#mobileMenu1
             #userSection
                 a(href="#") Моя учетная запись
-                button
+                button(onclick="app.closeButton('mobileMenu1' , 'greyBackgound' )")
             hr
             #locationSection
                 .locatonSection#mainCity
@@ -43,7 +43,7 @@ header
                     span Позвоните сейчас
         nav#catalog
             #headerOfCatalog
-                button
+                button(onclick="app.closeButton('catalog' , 'greyBackgound')")
                 h3 Каталог товаров
             each i in [{text: 'Телефоны' , img: '/img/files/phone.png' , link: '#'} , {text: 'Ноутбуки , планшеты , ПК' , img: '/img/files/laptop.png' , link: '#'} , {text: 'Часы' , img: '/img/files/watch.png' , link: '#'} , {text: 'ТВ' , img: '/img/files/tv.png' , link: '#'},{text: 'Наушники' , img: '/img/files/earphone.png' , link: '#'}]
                 a(href=`${i.link}`).catalogElement
