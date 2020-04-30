@@ -33,6 +33,7 @@
             }
             span {
                 color: $red;
+                @include font("text");
                 margin-left: 5px;
             }
         }
@@ -47,8 +48,8 @@
             margin-right: 15px;
         }
         #menuButton {
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
         }
     }
     #greyBackgound {
@@ -85,6 +86,7 @@
                 margin-left: 30px;
                 text-decoration: none;
                 color: $text_grey;
+                @include font("header");
                 &::before {
                     content: "";
                     width: 25px;
@@ -114,26 +116,22 @@
                 align-items: center;
                 height: 45px;
                 p {
+                    @include font("text");
+                    font-size: 0.9rem;
                     margin: 0;
                     margin-left: 10px;
                 }
             }
             #mainCity {
                 .locationSign {
-                    width: 20px;
-                    height: 20px;
-                    @include bg;
-                    background-image: url("/img/files/location.png");
+                    @include locationSign;
                 }
             }
             #chooseLanguage {
                 display: flex;
                 justify-content: space-between;
                 .arrow {
-                    width: 14px;
-                    height: 14px;
-                    @include bg;
-                    background-image: url("/img/files/arrow.png");
+                    @include arrow;
                 }
             }
         }
@@ -153,6 +151,8 @@
                     @include bg;
                 }
                 span {
+                    @include font("text");
+                    font-size: 0.9rem;
                     margin: 0;
                     margin-left: 10px;
                 }
@@ -164,6 +164,8 @@
             background-color: $light_grey;
             padding: 15px 45px;
             a {
+                @include font("text");
+                font-size: 0.9rem;
                 color: $text_grey;
                 text-decoration: none;
                 height: 40px;
@@ -191,12 +193,14 @@
                     background-image: url("/img/files/helper.png");
                 }
                 span {
+                    @include font("text");
                     color: $text_grey;
                     font-size: 14px;
                 }
             }
             #callMeBack {
                 span {
+                    @include font("text");
                     color: $text_grey;
                     font-size: 14px;
                     color: $red;
@@ -227,6 +231,7 @@
                 left: 15px;
             }
             h3 {
+                @include font("header");
                 color: $white;
             }
         }
@@ -240,6 +245,8 @@
                 flex: 1;
                 text-align: center;
                 color: $text_grey;
+                @include font("text");
+                font-size: 0.9rem;
             }
             .cotalogPhoto {
                 width: 25px;
@@ -261,7 +268,7 @@
             margin: 0;
         }
     }
-    #searchField{
+    #searchField {
         display: none;
         // display: flex;
         padding: 10px 15px;
@@ -273,22 +280,52 @@
         width: 100vw;
         height: 50px;
         background-color: $white;
-        #searchText{
+        #searchText {
             flex: 1;
             border: none;
             outline: none;
+            @include font("text");
+            font-size: 0.9rem;
+            color: $text_grey;
         }
-        #searchReset{
+        #searchReset {
             @include crossBtn;
-            background-image: url('/img/files/crossRed.svg');
+            background-image: url("/img/files/crossRed.svg");
             outline: none;
             margin: 0 5px;
         }
-        #searchSubmit{
+        #searchSubmit {
             margin: 0 5px;
             @include crossBtn;
-            background-image: url('/img/files/search.svg');
+            background-image: url("/img/files/search.svg");
             outline: none;
         }
     }
 }
+
+@media (min-width: 375px) {
+    #mobileHeader {
+        #mobileSection1 {
+            #mobileCatalog {
+                margin-left: 25px;
+            }
+        }
+        #mobileSection1 {
+            #mobileCatalog {
+                margin-right: 25px;
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    #mobileHeader {
+        #searchField {
+            padding: 10px 100px;
+        }
+        #catalog,
+        #mobileMenu1 {
+            width: 76vw;
+        }
+    }
+}
+@import 'headerPC';

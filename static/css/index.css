@@ -8,6 +8,14 @@ button {
   outline: none;
 }
 
+@font-face {
+  font-family: "header";
+  src: url("/fonts/Manrope-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "text";
+  src: url("/fonts/Manrope-Regular.ttf");
+}
 #desktopHeader {
   display: none;
 }
@@ -47,6 +55,7 @@ button {
 }
 #mobileHeader #mobileSection1 #mobileCatalog span {
   color: #e60000;
+  font-family: "text", Arial, Helvetica, sans-serif;
   margin-left: 5px;
 }
 #mobileHeader #mobileSection2 {
@@ -60,8 +69,8 @@ button {
   margin-right: 15px;
 }
 #mobileHeader #mobileSection2 #menuButton {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 #mobileHeader #greyBackgound {
   display: none;
@@ -98,6 +107,7 @@ button {
   margin-left: 30px;
   text-decoration: none;
   color: #333;
+  font-family: "header", Arial, Helvetica, sans-serif;
 }
 #mobileHeader #mobileMenu1 #userSection a::before {
   content: "";
@@ -137,6 +147,8 @@ button {
   height: 45px;
 }
 #mobileHeader #mobileMenu1 #locationSection .locatonSection p {
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
   margin: 0;
   margin-left: 10px;
 }
@@ -180,6 +192,8 @@ button {
   background-repeat: no-repeat;
 }
 #mobileHeader #mobileMenu1 #options .section span {
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
   margin: 0;
   margin-left: 10px;
 }
@@ -190,6 +204,8 @@ button {
   padding: 15px 45px;
 }
 #mobileHeader #mobileMenu1 #links a {
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
   color: #333;
   text-decoration: none;
   height: 40px;
@@ -220,10 +236,12 @@ button {
   background-image: url("/img/files/helper.png");
 }
 #mobileHeader #mobileMenu1 #hotLine #mobilePhoneNubmer span {
+  font-family: "text", Arial, Helvetica, sans-serif;
   color: #333;
   font-size: 14px;
 }
 #mobileHeader #mobileMenu1 #hotLine #callMeBack span {
+  font-family: "text", Arial, Helvetica, sans-serif;
   color: #333;
   font-size: 14px;
   color: #e60000;
@@ -259,6 +277,7 @@ button {
   left: 15px;
 }
 #mobileHeader #catalog #headerOfCatalog h3 {
+  font-family: "header", Arial, Helvetica, sans-serif;
   color: white;
 }
 #mobileHeader #catalog .catalogElement {
@@ -272,6 +291,8 @@ button {
   flex: 1;
   text-align: center;
   color: #333;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
 }
 #mobileHeader #catalog .catalogElement .cotalogPhoto {
   width: 25px;
@@ -311,6 +332,9 @@ button {
   flex: 1;
   border: none;
   outline: none;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #333;
 }
 #mobileHeader #searchField #searchReset {
   width: 25px;
@@ -337,6 +361,267 @@ button {
   background-repeat: no-repeat;
   background-image: url("/img/files/search.svg");
   outline: none;
+}
+
+@media (min-width: 375px) {
+  #mobileHeader #mobileSection1 #mobileCatalog {
+    margin-left: 25px;
+  }
+  #mobileHeader #mobileSection1 #mobileCatalog {
+    margin-right: 25px;
+  }
+}
+@media (min-width: 768px) {
+  #mobileHeader #searchField {
+    padding: 10px 100px;
+  }
+  #mobileHeader #catalog,
+#mobileHeader #mobileMenu1 {
+    width: 76vw;
+  }
+}
+@media (min-width: 1024px) {
+  #mobileHeader {
+    display: none;
+  }
+
+  #desktopHeader {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+  }
+  #desktopHeader nav,
+#desktopHeader section {
+    padding: 7px 30px;
+  }
+  #desktopHeader nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4a4d4e;
+  }
+  #desktopHeader nav .section1 a {
+    margin: 0 15px;
+    color: white;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  #desktopHeader nav .section2 {
+    display: flex;
+  }
+  #desktopHeader nav .section2 #phoneNumber {
+    position: relative;
+    cursor: pointer;
+  }
+  #desktopHeader nav .section2 #phoneNumber:hover > .arrow {
+    transform: rotate(180deg);
+  }
+  #desktopHeader nav .section2 #phoneNumber:hover > .callMeBlock {
+    display: block;
+  }
+  #desktopHeader nav .section2 #phoneNumber span {
+    font-family: "text", Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 0.9rem;
+    margin-right: 5px;
+  }
+  #desktopHeader nav .section2 #phoneNumber .arrow {
+    width: 14px;
+    height: 14px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/img/files/arrow.png");
+    background-image: url("/img/files/arrow_w.png");
+  }
+  #desktopHeader nav .section2 #phoneNumber .callMeBlock {
+    display: none;
+    width: 121px;
+    position: absolute;
+    padding: 7px;
+    color: white;
+    background-color: #4a4d4eed;
+    top: 26px;
+    left: -10px;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+  }
+  #desktopHeader nav .section2 #city {
+    cursor: pointer;
+  }
+  #desktopHeader nav .section2 #city .locationSign {
+    width: 20px;
+    height: 20px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/img/files/location.png");
+    background-image: url("/img/files/location_w.png");
+    width: 18px;
+    height: 18px;
+  }
+  #desktopHeader nav .section2 #city span {
+    margin-left: 5px;
+    color: white;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+  }
+  #desktopHeader nav .section2 #language span {
+    margin-right: 5px;
+    color: white;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+  }
+  #desktopHeader nav .section2 #language .arrow {
+    width: 14px;
+    height: 14px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/img/files/arrow.png");
+    background-image: url("/img/files/arrow_w.png");
+  }
+  #desktopHeader nav .section2 #myAccount span {
+    margin-left: 5px;
+    color: white;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+  }
+  #desktopHeader nav .section2 #myAccount .user {
+    width: 25px;
+    height: 25px;
+    background-image: url("/img/files/user_w.png");
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  #desktopHeader nav .section2 > div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 15px;
+  }
+  #desktopHeader section {
+    display: flex;
+    width: 100vw;
+    background-color: white;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  #desktopHeader section .logo {
+    width: 40px;
+    height: 40px;
+  }
+  #desktopHeader section .logo img {
+    width: 100%;
+    height: 100%;
+  }
+  #desktopHeader section h3 {
+    font-family: "text", Arial, Helvetica, sans-serif;
+    color: #333;
+    font-weight: lighter;
+    margin: 0 30px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  #desktopHeader section .search {
+    margin-left: 15px;
+    flex: 1;
+    padding: 0 10px;
+  }
+  #desktopHeader section .search #searchField {
+    display: flex;
+    padding: 15px 0;
+    box-sizing: border-box;
+    align-items: center;
+    height: 50px;
+  }
+  #desktopHeader section .search #searchField #searchText {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  #desktopHeader section .search #searchField #searchReset {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-image: url("/img/files/cross.svg");
+    background-color: transparent;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/img/files/crossRed.svg");
+    outline: none;
+    margin: 0 10px;
+  }
+  #desktopHeader section .search #searchField #searchSubmit {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-image: url("/img/files/cross.svg");
+    background-color: transparent;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/img/files/search.svg");
+    outline: none;
+    margin: 0 10px;
+  }
+  #desktopHeader section .search #searchField .verticalDiv {
+    width: 0.8px;
+    height: 20.8px;
+    background-color: #4a4d4e;
+  }
+  #desktopHeader section .search .verticalDiv2 {
+    height: 1px;
+    background-color: #4a4d4e;
+  }
+  #desktopHeader section #match,
+#desktopHeader section #favorite,
+#desktopHeader section #bin {
+    width: 35px;
+    height: 35px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 25px;
+    cursor: pointer;
+  }
+  #desktopHeader section #match {
+    background-image: url("/img/files/scales.png");
+  }
+  #desktopHeader section #favorite {
+    background-image: url("/img/files/favorite.png");
+  }
+  #desktopHeader section #bin {
+    background-image: url("/img/files/bin.png");
+  }
+}
+@media (min-width: 1440px) {
+  #desktopHeader nav,
+#desktopHeader section {
+    padding: 7px 100px;
+  }
+  #desktopHeader section #match,
+#desktopHeader section #favorite,
+#desktopHeader section #bin {
+    margin: 0 30px;
+  }
+}
+@media (min-width: 2560px) {
+  #desktopHeader nav,
+#desktopHeader section {
+    padding: 7px 500px;
+  }
+  #desktopHeader section #match,
+#desktopHeader section #favorite,
+#desktopHeader section #bin {
+    margin: 0 50px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

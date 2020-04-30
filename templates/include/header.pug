@@ -57,5 +57,37 @@ header
             .verticalDiv
             input(type="submit" value="")#searchSubmit
     #desktopHeader
+        nav
+            .section1
+                a(href="#") Доставка и оплата
+                a(href="#") Гарантия
+                a(href="#") Акции
+                a(href="#") Магазины
+            .section2
+                #phoneNumber
+                    span 0 800 40 40 40
+                    .arrow
+                    .callMeBlock Перезвоните нам
+                #city
+                    .locationSign
+                    span Киев
+                #language
+                    span RU
+                    .arrow
+                #myAccount
+                    .user
+                    span Личный кабинет
         section
-        section
+            a(href="/").logo
+                img(src="/img/files/logo.svg", alt="logo")
+            h3 Каталог товаров
+            .search
+                form#searchField
+                    input(type="text" placeholder="Поиск товаров")#searchText
+                    input(type="reset" value="")#searchReset
+                    .verticalDiv
+                    input(type="submit" value="")#searchSubmit
+                .verticalDiv2
+            #match
+            #favorite
+            #bin
