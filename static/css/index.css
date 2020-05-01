@@ -247,6 +247,7 @@ button {
   color: #e60000;
 }
 #mobileHeader #catalog {
+  overflow: hidden;
   display: none;
   flex-direction: column;
   background-color: white;
@@ -255,6 +256,55 @@ button {
   position: absolute;
   left: 0;
   top: 0;
+}
+#mobileHeader #catalog #catalog2 {
+  position: absolute;
+  width: 95vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 15;
+  left: 95vw;
+  transition: 0.4s left;
+}
+#mobileHeader #catalog #catalog2 #headerOfCatalog2 {
+  display: flex;
+  background-color: #e60000;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+#mobileHeader #catalog #catalog2 #headerOfCatalog2 button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-image: url("/img/files/cross.svg");
+  background-color: transparent;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/img/files/arrow_w.png");
+  position: absolute;
+  left: 15px;
+  transform: rotate(90deg);
+}
+#mobileHeader #catalog #catalog2 #headerOfCatalog2 h3 {
+  font-family: "header", Arial, Helvetica, sans-serif;
+  color: white;
+}
+#mobileHeader #catalog #catalog2 .catalogElement {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 15px;
+}
+#mobileHeader #catalog #catalog2 .catalogElement span {
+  text-align: center;
+  color: #333;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
 }
 #mobileHeader #catalog #headerOfCatalog {
   display: flex;

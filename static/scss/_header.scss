@@ -209,6 +209,7 @@
         }
     }
     #catalog {
+        overflow: hidden;
         display: none;
         // display: flex;
         flex-direction: column;
@@ -218,6 +219,48 @@
         position: absolute;
         left: 0;
         top: 0;
+        #catalog2 {
+            position: absolute;
+            width: 95vw;
+            height: 100vh;
+            background-color: $white;
+            display: flex;
+            flex-direction: column;
+            z-index: 15;
+            left: 95vw;
+            transition: .4s left;
+            #headerOfCatalog2 {
+                display: flex;
+                background-color: $red;
+                height: 50px;
+                align-items: center;
+                justify-content: center;
+                button {
+                    @include crossBtn;
+                    background-image: url("/img/files/arrow_w.png");
+                    position: absolute;
+                    left: 15px;
+                    transform: rotate(90deg);
+                }
+                h3 {
+                    @include font("header");
+                    color: $white;
+                }
+            }
+            .catalogElement {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                height: 50px;
+                padding: 0 15px;
+                span {
+                    text-align: center;
+                    color: $text_grey;
+                    @include font("text");
+                    font-size: 0.9rem;
+                }
+            }
+        }
         #headerOfCatalog {
             display: flex;
             background-color: $red;
@@ -328,4 +371,4 @@
         }
     }
 }
-@import 'headerPC';
+@import "headerPC";

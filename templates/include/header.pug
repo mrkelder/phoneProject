@@ -42,11 +42,17 @@ header
                 #callMeBack
                     span Позвоните сейчас
         nav#catalog
+            #catalog2
+                #headerOfCatalog2
+                    button
+                    h3 undefined
+                a(href="#").catalogElement
+                    span undefined
             #headerOfCatalog
                 button(onclick="app.closeButton('catalog' , 'greyBackgound')")
                 h3 Каталог товаров
-            each i in [{text: 'Телефоны' , img: '/img/files/phone.png' , link: '#'} , {text: 'Ноутбуки , планшеты , ПК' , img: '/img/files/laptop.png' , link: '#'} , {text: 'Часы' , img: '/img/files/watch.png' , link: '#'} , {text: 'ТВ' , img: '/img/files/tv.png' , link: '#'},{text: 'Наушники' , img: '/img/files/earphone.png' , link: '#'}]
-                a(href=`${i.link}`).catalogElement
+            each i in [{text: 'Телефоны' , img: '/img/files/phone.png' } , {text: 'Ноутбуки' , img: '/img/files/laptop.png' } , {text: 'Часы' , img: '/img/files/watch.png' } , {text: 'ТВ' , img: '/img/files/tv.png' },{text: 'Наушники' , img: '/img/files/earphone.png' }]
+                .catalogElement
                     div(style=`background-image: url('${i.img}')`).cotalogPhoto
                     span #{i.text}
                     .toCatalogElement
