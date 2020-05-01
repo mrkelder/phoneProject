@@ -57,4 +57,17 @@ button {
     background-image: url("/img/files/location.png");
 }
 
+@mixin hr {
+    margin: 0;
+    border: 0.5px solid $grey;
+}
+
+@mixin input {
+    border: none;
+    outline: none;
+    @include font("text");
+    font-size: 0.9rem;
+    color: $text_grey;
+}
+
 @import "header";

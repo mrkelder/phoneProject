@@ -35,21 +35,25 @@ class App {
     }
     mobileHeader() {
         $('#mobileCatalog').click(() => {
+            // Opens the mobile catalog
             $('#catalog').css('display', 'flex');
             $('#greyBackgound').css('display', 'block');
         });
 
         $('#menuButton').click(() => {
+            // Opens the mobile menu
             $('#mobileMenu1').css('display', 'flex');
             $('#greyBackgound').css('display', 'block');
         });
 
         $('#searchIcon').click(() => {
+            // Opens the search
             $('#searchField').css('display', 'flex');
             $('#greyBackgound').css('display', 'block');
         });
 
         $('#catalog > .catalogElement').click(event => {
+            // Opens the categories in the catalog
             $('#catalog2').css({ 'left': 0 });
             $('#headerOfCatalog2').find('h3').text(event.target.innerText);
             $('#catalog2').find('.catalogElement').remove();
@@ -61,8 +65,17 @@ class App {
         });
 
         $('#headerOfCatalog2').find('button').click(() => {
+            // Closes the categories in the catalog
             $('#catalog2').css({ 'left': '95vw' });
-        })
+        });
+
+        $('#mainCity').click(() => {
+            this.chooseCity();
+        });
+    }
+    chooseCity({ input ,  closeButton}){
+        // input - search input
+        // closeButton - closing button
     }
     header() {
 

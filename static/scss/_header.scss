@@ -38,6 +38,68 @@
             }
         }
     }
+    #chooseCityBg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0a0a0aa1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 15;
+        width: 100vw;
+        height: 100vh;
+        #chooseCity{
+            overflow: hidden;
+            width: 75vw;
+            height: 75vh;
+            background-color: #fff;
+            #chooseHeaderSection{
+                padding: 0 15px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .location{
+                    @include locationSign;
+                }
+                h5{
+                    @include font('text');
+                    margin: 0;
+                }
+                button{
+                    @include crossBtn;
+                }
+            }
+            hr{
+                @include hr;
+            }
+            #cities{
+                padding: 5px 15px;
+                input{
+                    width: 100%;
+                    margin: 25px 0 5px;
+                    @include input;
+                }
+                #cityList{
+                    margin-top: 15px;
+                    overflow-y: scroll;
+                    height: 48vh;
+                    .city{
+                        display: flex;
+                        align-items: center;
+                        height: 50px;
+                        span {
+                            margin-left: 15px;
+                            @include font('text');
+                            font-size: .9rem;
+                            color: $text_grey;
+                        }
+                    }
+                }  
+            }
+        }
+    }
     #mobileSection2 {
         display: flex;
         justify-content: center;
@@ -103,8 +165,7 @@
             }
         }
         hr {
-            margin: 0;
-            border: 0.5px solid $grey;
+            @include hr;
         }
         #locationSection {
             display: flex;
@@ -325,11 +386,7 @@
         background-color: $white;
         #searchText {
             flex: 1;
-            border: none;
-            outline: none;
-            @include font("text");
-            font-size: 0.9rem;
-            color: $text_grey;
+            @include input;
         }
         #searchReset {
             @include crossBtn;

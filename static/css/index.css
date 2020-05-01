@@ -58,6 +58,85 @@ button {
   font-family: "text", Arial, Helvetica, sans-serif;
   margin-left: 5px;
 }
+#mobileHeader #chooseCityBg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0a0aa1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 15;
+  width: 100vw;
+  height: 100vh;
+}
+#mobileHeader #chooseCityBg #chooseCity {
+  overflow: hidden;
+  width: 75vw;
+  height: 75vh;
+  background-color: #fff;
+}
+#mobileHeader #chooseCityBg #chooseCity #chooseHeaderSection {
+  padding: 0 15px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#mobileHeader #chooseCityBg #chooseCity #chooseHeaderSection .location {
+  width: 20px;
+  height: 20px;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/img/files/location.png");
+}
+#mobileHeader #chooseCityBg #chooseCity #chooseHeaderSection h5 {
+  font-family: "text", Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+#mobileHeader #chooseCityBg #chooseCity #chooseHeaderSection button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-image: url("/img/files/cross.svg");
+  background-color: transparent;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#mobileHeader #chooseCityBg #chooseCity hr {
+  margin: 0;
+  border: 0.5px solid #4a4d4e;
+}
+#mobileHeader #chooseCityBg #chooseCity #cities {
+  padding: 5px 15px;
+}
+#mobileHeader #chooseCityBg #chooseCity #cities input {
+  width: 100%;
+  margin: 25px 0 5px;
+  border: none;
+  outline: none;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #333;
+}
+#mobileHeader #chooseCityBg #chooseCity #cities #cityList {
+  margin-top: 15px;
+  overflow-y: scroll;
+  height: 48vh;
+}
+#mobileHeader #chooseCityBg #chooseCity #cities #cityList .city {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+#mobileHeader #chooseCityBg #chooseCity #cities #cityList .city span {
+  margin-left: 15px;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #333;
+}
 #mobileHeader #mobileSection2 {
   display: flex;
   justify-content: center;
