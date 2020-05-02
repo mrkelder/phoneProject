@@ -70,12 +70,22 @@ class App {
         });
 
         $('#mainCity').click(() => {
-            this.chooseCity();
+            $('#chooseCityBg').css('display' , 'flex');
+            this.chooseCity({
+                input: $('#cities > input'),
+                closeButton: $('#chooseHeaderSection > button'),
+                window: $('#chooseCityBg')
+            });
         });
     }
-    chooseCity({ input ,  closeButton}){
+    chooseCity({ input ,  closeButton , window}){
         // input - search input
         // closeButton - closing button
+        // window - grey bg and the window itself
+        input;
+        closeButton.click(() => {
+            window.css('display' , 'none');
+        });
     }
     header() {
 

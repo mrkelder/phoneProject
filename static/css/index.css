@@ -59,7 +59,7 @@ button {
   margin-left: 5px;
 }
 #mobileHeader #chooseCityBg {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background-color: #0a0a0aa1;

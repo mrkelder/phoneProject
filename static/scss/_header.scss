@@ -39,7 +39,8 @@
         }
     }
     #chooseCityBg{
-        display: flex;
+        display: none;
+        // display: flex;
         justify-content: center;
         align-items: center;
         background-color: #0a0a0aa1;
