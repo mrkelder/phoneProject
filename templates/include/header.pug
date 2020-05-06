@@ -5,7 +5,7 @@ header
                 img(src="/img/files/logo.svg", alt="")
             #mobileCatalog
                 img(src="/img/files/catalog.svg", alt="catalog")
-                span Каталог товаров
+                span #{header.lang === 'ua' ? 'Каталог товарів' :'Каталог товаров'}
         .gap
         #mobileSection2
             img(src="/img/files/search.svg", alt="search")#searchIcon
@@ -15,47 +15,50 @@ header
             #chooseCity
                 #chooseHeaderSection
                     .location
-                    h5 Выберите свой город
+                    h5 #{header.lang === 'ua' ? 'Виберіть своє місто' :'Выберите свой город'}
                     button
                 hr
                 #cities
                     input(type="text" placeholder="Укажите город")
                     hr
                     #cityList
-                        each i in ['Киев' , 'Донецк' , 'Севостополь' , 'Нью-Йорк' , 'Вроцлав']
-                            .city
-                                span #{i}
+                        each i in header.cities
+                            div(data-id=`${i._id}` data-city=`${JSON.stringify(i.city)}`).city
+                                span(data-id=`${i._id}` data-city=`${JSON.stringify(i.city)}`) #{i.city[i.city.findIndex(e => e.lang === header.lang)].name}
+                                b(data-id=`${i._id}` data-city=`${JSON.stringify(i.city)}`) #{i.name}
                             hr
         side#mobileMenu1
             #userSection
-                a(href="#") Моя учетная запись
+                a(href="#") #{header.lang === 'ua' ? 'Мій обліковий запис' :'Моя учетная запись'}
                 button(onclick="app.closeButton('mobileMenu1' , 'greyBackgound' )")
             hr
             #locationSection
                 .locatonSection#mainCity
                     .locationSign
-                    p Киев
+                    p #{header.lang === 'ua' ? 'Київ' : 'Киев'}
                 .verticalDiv
                 .locatonSection#chooseLanguage
-                    p RU
+                    #panelWithAnotherLanguage
+                        span #{header.lang === 'ua' ? 'RU' :'UA'}
+                    p #{header.lang === 'ua' ? 'UA' :'RU'}
                     .arrow
             hr
             #options
-                each element in [{text: 'На главную' , link: '#' , icon: 'house.png'} , {text: 'Сравнение товаров' , link: '#' , icon: 'scales.png'} , {text: 'Избранные' , link: '#' , icon: 'favorite.png'} , {text: 'Корзина' , link: '#' , icon: 'bin.png'}]
+                each element in [{text: {ru:'На главную' , ua: 'На головну'} , link: '#' , icon: 'house.png'} , {text: {ru:'Сравнение товаров' , ua: 'Порівняння товарів'} , link: '#' , icon: 'scales.png'} , {text:  {ru:'Избранные' , ua: 'Вибрані'}, link: '#' , icon: 'favorite.png'} , {text: { ru:'Корзина' , ua: 'Кошик' } , link: '#' , icon: 'bin.png'}]
                     a(href=`${element.link}`).section
                         div(style=`background-image: url('/img/files/${element.icon}')`)
-                        span #{element.text}
+                        span #{header.lang === 'ua' ? element.text.ua : element.text.ru }
             #links
-                a(href="#") Доставка и оплата
-                a(href="#") Гарантия
-                a(href="#") Акции
-                a(href="#") Магазины
+                a(href="#") #{header.lang === 'ua' ? 'Доставка і оплата' :'Доставка и оплата'}
+                a(href="#") #{header.lang === 'ua' ? 'Гарантія' :'Гарантия'}
+                a(href="#") #{header.lang === 'ua' ? 'Акції' :'Акции'}
+                a(href="#") #{header.lang === 'ua' ? 'Магазини' :'Магазины'}
             a(href="")#hotLine
                 #mobilePhoneNubmer
                     #helperIcon
                     span 0 800 40 40 40
                 #callMeBack
-                    span Позвоните сейчас
+                    span #{header.lang === 'ua' ? 'Зателефонуйте зараз' :'Позвоните сейчас'}
         nav#catalog
             #catalog2
                 #headerOfCatalog2
@@ -65,11 +68,11 @@ header
                     span undefined
             #headerOfCatalog
                 button(onclick="app.closeButton('catalog' , 'greyBackgound')")
-                h3 Каталог товаров
-            each i in [{text: 'Телефоны' , img: '/img/files/phone.png' } , {text: 'Ноутбуки' , img: '/img/files/laptop.png' } , {text: 'Часы' , img: '/img/files/watch.png' } , {text: 'ТВ' , img: '/img/files/tv.png' },{text: 'Наушники' , img: '/img/files/earphone.png' }]
+                h3 #{header.lang === 'ua' ? 'Каталог товарів' :'Каталог товаров'}
+            each i in [{text: {ua: 'Телефони' , ru: 'Телефоны'} , img: '/img/files/phone.png' } , {text: {ua: 'Ноутбуки' , ru: 'Ноутбуки'} , img: '/img/files/laptop.png' } , {text: {ua: 'Годинники' , ru: 'Часы'} , img: '/img/files/watch.png' } , { text: { ua: 'ТВ' , ru: 'ТВ' } , img: '/img/files/tv.png' },{text: { ua: 'Навушники' , ru: 'Наушники' } , img: '/img/files/earphone.png' }]
                 .catalogElement
                     div(style=`background-image: url('${i.img}')`).cotalogPhoto
-                    span #{i.text}
+                    span #{ header.lang === 'ua' ? i.text.ua : i.text.ru }
                     .toCatalogElement
                 hr
         form#searchField

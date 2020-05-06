@@ -3,6 +3,9 @@ const path = require('path');
 // Basic modules
 
 fastify.decorate('checkError', (err, condition = null) => {
+    // err - object of error
+    // condition - condition , that equals to null or something else (null in most cases)
+    // this decoration returns promise that you can work with (or do nothing if you don't need)
     return new Promise((res, rej) => {
         const assert = require('assert');
         try {
@@ -13,8 +16,8 @@ fastify.decorate('checkError', (err, condition = null) => {
         }
         res('Everything went right');
     }).catch(err => {
-        console.error("\x1b[30m\x1b[41m" , err.message);
-        console.log("\x1b[0m" ,'');
+        console.error("\x1b[30m\x1b[41m", err.message);
+        console.log("\x1b[0m", '');
     });
 });
 
@@ -25,14 +28,41 @@ fastify.decorate('mongodb', func => {
     const client = new MongoClient('mongodb://localhost:27017', { useUnifiedTopology: true });
 
     client.connect(err => {
-        checkError(err);
-        const db = client.db('PhoneShop');
+        fastify.checkError(err);
+        const db = client.db('phoneShop');
         func({
             mongodb: mongodb,
             db: db,
             client: client
         });
     });
+});
+
+fastify.decorate('header', async ({ req }) => {
+    return { cities: await fastify.cities(), lang: fastify.lang(req) };
+});
+
+fastify.decorate('cities', () => {
+    // Retrieving cities for header (mobile and PC)
+    return new Promise(res => {
+        fastify.mongodb(({ db, client }) => {
+            db.collection('shops').find({}).limit(5).toArray(async (err, arr) => {
+                await fastify.checkError(err);
+                client.close();
+                res(arr);
+            });
+        });
+    })
+});
+
+fastify.decorate('lang', req => {
+    // Choosing language
+    if (req.cookies.lang === undefined || req.cookies.lang === 'ua') {
+        return 'ua';
+    }
+    else {
+        return 'ru';
+    }
 });
 
 fastify
@@ -49,7 +79,8 @@ fastify
         includeViewExtension: true
     })
     .register(require('fastify-formbody'))
-    .register(require(path.join(__dirname , '/server/route.js')))
+    .register(require(path.join(__dirname, '/server/route.js')))
+    .register(require(path.join(__dirname, '/server/utility.js')))
     .ready(err => {
         fastify.checkError(err).then(() => {
             console.log('Availalbe at http://localhost:8080');
