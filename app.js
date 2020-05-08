@@ -39,7 +39,7 @@ fastify.decorate('mongodb', func => {
 });
 
 fastify.decorate('header', async ({ req }) => {
-    return { cities: await fastify.cities(), lang: fastify.lang(req) };
+    return { cities: await fastify.cities(), lang: fastify.lang(req), categories: await fastify.categories() };
 });
 
 fastify.decorate('cities', () => {
@@ -63,6 +63,19 @@ fastify.decorate('lang', req => {
     else {
         return 'ru';
     }
+});
+
+fastify.decorate('categories', () => {
+    // Creates an array with the categories
+    return new Promise((res, rej) => {
+        fastify.mongodb(({ db, client }) => {
+            db.collection('products').find().toArray(async (err, arr) => {
+                await fastify.checkError(err);
+                client.close();
+                res(JSON.stringify(arr));
+            });
+        });
+    });
 });
 
 fastify

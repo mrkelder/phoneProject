@@ -531,6 +531,10 @@ button {
 #mobileHeader #mobileMenu1 {
     width: 76vw;
   }
+  #mobileHeader #catalog #catalog2,
+#mobileHeader #mobileMenu1 #catalog2 {
+    width: 76vw;
+  }
 }
 @media (min-width: 1024px) {
   #mobileHeader {

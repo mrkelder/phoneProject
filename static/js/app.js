@@ -1,37 +1,8 @@
 class App {
     constructor() {
         this.isNavOpen = false;
-        this.catalog = {
-            'Телефоны': [
-                { name: 'Смартфоны', link: 'item3123123' },
-                { name: 'Кнопочные телефоны', link: 'item3123123' },
-                { name: 'SIM', link: 'item3123123' }
-            ],
-            'Ноутбуки': [
-                { name: 'Ноутбуки', link: 'item3123123' },
-                { name: 'Планшеты', link: 'item3123123' },
-                { name: 'Компьютеры', link: 'item3123123' },
-                { name: 'Электронные книги', link: 'item3123123' },
-                { name: 'Мониторы', link: 'item3123123' },
-                { name: 'Моноблоки', link: 'item3123123' }
-            ],
-            'Часы': [
-                { name: 'Механические часы', link: 'item3123123' },
-                { name: 'Электронные часы', link: 'item3123123' },
-                { name: 'Смарт часы', link: 'item3123123' }
-            ],
-            'ТВ': [
-                { name: 'Телевизоры', link: 'item3123123' },
-                { name: 'Проекторы', link: 'item3123123' },
-                { name: 'ТВ приставки', link: 'item3123123' },
-                { name: 'Колонки', link: 'item3123123' }
-            ],
-            'Наушники': [
-                { name: 'Наушники', link: 'item3123123' },
-                { name: 'Микрофон', link: 'item3123123' },
-                { name: 'Вакумные наушники', link: 'item3123123' }
-            ]
-        };
+        this.catalog = JSON.parse($('header').attr('data-categories'));
+        $('header').removeAttr('data-categories');
         this.langs = ['ua', 'ru'];
         if ($.cookie('lang') === undefined)
             // if the language is not set yet , set up ukrainian
@@ -63,13 +34,15 @@ class App {
         });
 
         $('#catalog > .catalogElement').click(event => {
-            // Opens the categories in the catalog
+            // Opens the categories in the catalog and renders the elements dynamically
             $('#catalog2').css({ 'left': 0 });
             $('#headerOfCatalog2').find('h3').text(event.target.innerText);
             $('#catalog2').find('.catalogElement').remove();
             $('#catalog2').find('hr').remove();
-            this.catalog[event.target.innerText].forEach(element => {
-                $('#headerOfCatalog2').after(`<a class="catalogElement" href="/shop/${element.link}"><span>${element.name}</span></a>`);
+            this.catalog[
+                this.catalog.findIndex(i => i._id === event.target.getAttribute('data-category'))
+            ].categories.forEach(element => {
+                $('#headerOfCatalog2').after(`<a class="catalogElement" href="/shop/${element.link}"><span>${element.name[element.name.findIndex(nameOfCategory => nameOfCategory.lang === $.cookie('lang'))].name}</span></a>`);
             });
             $('#catalog2 .catalogElement').after('<hr />');
         });

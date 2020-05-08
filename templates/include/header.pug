@@ -1,4 +1,4 @@
-header
+header(data-categories=`${header.categories}`)
     #mobileHeader
         #mobileSection1
             a(href="/")#logo
@@ -69,11 +69,11 @@ header
             #headerOfCatalog
                 button(onclick="app.closeButton('catalog' , 'greyBackgound')")
                 h3 #{header.lang === 'ua' ? 'Каталог товарів' :'Каталог товаров'}
-            each i in [{text: {ua: 'Телефони' , ru: 'Телефоны'} , img: '/img/files/phone.png' } , {text: {ua: 'Ноутбуки' , ru: 'Ноутбуки'} , img: '/img/files/laptop.png' } , {text: {ua: 'Годинники' , ru: 'Часы'} , img: '/img/files/watch.png' } , { text: { ua: 'ТВ' , ru: 'ТВ' } , img: '/img/files/tv.png' },{text: { ua: 'Навушники' , ru: 'Наушники' } , img: '/img/files/earphone.png' }]
-                .catalogElement
-                    div(style=`background-image: url('${i.img}')`).cotalogPhoto
-                    span #{ header.lang === 'ua' ? i.text.ua : i.text.ru }
-                    .toCatalogElement
+            each i in JSON.parse(header.categories)
+                div(data-category=`${i._id}`).catalogElement
+                    div(style=`background-image: url('/img/files/${i.img}')` data-category=`${i._id}`).cotalogPhoto
+                    span(data-category=`${i._id}`) #{i.name[i.name.findIndex(a => a.lang === header.lang)].name}
+                    div(data-category=`${i._id}`).toCatalogElement
                 hr
         form#searchField
             input(type="text" placeholder="Поиск")#searchText
