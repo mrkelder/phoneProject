@@ -81,6 +81,26 @@ class App {
             $('#panelWithAnotherLanguage').css('display' , 'none');
             location.reload();
         });
+
+        $('#searchReset').click(() => {
+            $('#resultItems').find('.item , p').remove();
+            $('#resultItems').append(`<p> ${ $.cookie('lang') === 'ua' ? 'Результатів немає' : 'Результатов нет'} </p>`);
+        });
+
+        $('#searchText').on('input' , e => {
+            $.get('/findItem' , { itemName: e.target.value } , info => {
+                const items = JSON.parse(info);
+                $('#resultItems').find('.item , p').remove();
+                if(items.length === 0){
+                    $('#resultItems').append(`<p> ${ $.cookie('lang') === 'ua' ? 'Результатів немає' : 'Результатов нет'} </p>`);
+                }
+                else{
+                    for(let i of items){
+                        $('#resultItems').append(`<a class="item" href="#"><img src="/img/products/${i.themes[0].major_photo}" alt="товар"><div class="info"><p class="nameOfItem">${i.name}</p><p class="price">${i.price}</p></div></a>`);
+                    }
+                }
+            });
+        });
     }
 
     handlerForCities(e){

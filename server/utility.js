@@ -15,6 +15,21 @@ async function utility(fastify, object) {
             });
         });
     });
+
+    fastify.get('/findItem' , (req , reply) => {
+        // Searches for items and gives array of them
+        fastify.mongodb(({db , client}) => {
+            db.collection('items').find({
+                $text: {
+                    $search: req.query.itemName
+                }
+            }).limit(5).toArray(async (err , arr) => {
+                await fastify.checkError(err);
+                reply.send(JSON.stringify(arr));
+                client.close();
+            });
+        });
+    });
 }
 
 module.exports = utility;

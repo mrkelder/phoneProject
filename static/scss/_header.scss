@@ -38,7 +38,7 @@
             }
         }
     }
-    #chooseCityBg{
+    #chooseCityBg {
         display: none;
         // display: flex;
         justify-content: center;
@@ -50,61 +50,61 @@
         z-index: 15;
         width: 100vw;
         height: 100vh;
-        #chooseCity{
+        #chooseCity {
             overflow: hidden;
             width: 75vw;
             height: 75vh;
             background-color: #fff;
-            #chooseHeaderSection{
+            #chooseHeaderSection {
                 padding: 0 15px;
                 height: 35px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                .location{
+                .location {
                     @include locationSign;
                 }
-                h5{
-                    @include font('text');
+                h5 {
+                    @include font("text");
                     margin: 0;
                 }
-                button{
+                button {
                     @include crossBtn;
                 }
             }
-            hr{
+            hr {
                 @include hr;
             }
-            #cities{
+            #cities {
                 padding: 5px 15px;
-                input{
+                input {
                     width: 100%;
                     margin: 25px 0 5px;
                     @include input;
                 }
-                #cityList{
+                #cityList {
                     margin-top: 15px;
                     overflow-y: scroll;
                     height: 48vh;
-                    .city{
+                    .city {
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         height: 50px;
                         span {
                             margin-left: 15px;
-                            @include font('text');
-                            font-size: .9rem;
+                            @include font("text");
+                            font-size: 0.9rem;
                             color: $text_grey;
                         }
-                        b{
+                        b {
                             margin-left: 15px;
-                            @include font('text');
-                            font-size: .8rem;
+                            @include font("text");
+                            font-size: 0.8rem;
                             color: $text_grey;
                         }
                     }
-                }  
+                }
             }
         }
     }
@@ -200,7 +200,7 @@
                 display: flex;
                 justify-content: space-between;
                 position: relative;
-                #panelWithAnotherLanguage{
+                #panelWithAnotherLanguage {
                     display: none;
                     align-items: center;
                     width: 100%;
@@ -209,8 +209,8 @@
                     background-color: $white;
                     position: absolute;
                     box-shadow: 1px 1px 4px 0px #4a4d4ec4;
-                    span{
-                        @include font('text');
+                    span {
+                        @include font("text");
                         margin-left: 10px;
                         font-size: 0.9rem;
                     }
@@ -313,7 +313,7 @@
             flex-direction: column;
             z-index: 15;
             left: 95vw;
-            transition: .4s left;
+            transition: 0.4s left;
             #headerOfCatalog2 {
                 display: flex;
                 background-color: $red;
@@ -424,6 +424,60 @@
             background-image: url("/img/files/search.svg");
             outline: none;
         }
+        #resultsOfSearch {
+            top: 50px;
+            left: 0;
+            position: absolute;
+            width: 100vw;
+            background-color: $light_grey;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            max-height: 70vh;
+            overflow: scroll;
+            h3 {
+                @include font("header");
+                color: $text_grey;
+            }
+            #resultItems {
+                display: flex;
+                flex-direction: column;
+                .item {
+                    text-decoration: none;
+                    color: $text_grey;
+                    @include font("text");
+                    font-size: 0.9rem;
+                    display: flex;
+                    background-color: $white;
+                    box-sizing: border-box;
+                    padding: 8px;
+                    border: 1px solid $text_light_grey;
+                    img {
+                        width: 75px;
+                        height: 75px;
+                    }
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        overflow: hidden;
+                        flex: 1;
+                        padding-left: 15px;
+                        .nameOfItem {
+                            margin: 0;
+                        }
+                        .price {
+                            margin: 0;
+                            color: $red;
+                        }
+                    }
+                }
+                p{
+                    font-size: .9rem;
+                    @include font('text');
+                    color: $text_grey;
+                }
+            }
+        }
     }
 }
 
@@ -449,7 +503,7 @@
         #catalog,
         #mobileMenu1 {
             width: 76vw;
-            #catalog2{
+            #catalog2 {
                 width: 76vw;
             }
         }

@@ -80,6 +80,10 @@ header(data-categories=`${header.categories}`)
             input(type="reset" value="")#searchReset
             .verticalDiv
             input(type="submit" value="")#searchSubmit
+            #resultsOfSearch
+                h3 #{header.lang === 'ua' ? 'Результати пошуку' :'Результаты поиска' }
+                #resultItems
+                    p #{header.lang === 'ua' ? 'Результатів немає' : 'Результатов нет' }
     #desktopHeader
         nav
             .section1

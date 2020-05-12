@@ -514,6 +514,60 @@ button {
   background-image: url("/img/files/search.svg");
   outline: none;
 }
+#mobileHeader #searchField #resultsOfSearch {
+  top: 50px;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  max-height: 70vh;
+  overflow: scroll;
+}
+#mobileHeader #searchField #resultsOfSearch h3 {
+  font-family: "header", Arial, Helvetica, sans-serif;
+  color: #333;
+}
+#mobileHeader #searchField #resultsOfSearch #resultItems {
+  display: flex;
+  flex-direction: column;
+}
+#mobileHeader #searchField #resultsOfSearch #resultItems .item {
+  text-decoration: none;
+  color: #333;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  display: flex;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #999;
+}
+#mobileHeader #searchField #resultsOfSearch #resultItems .item img {
+  width: 75px;
+  height: 75px;
+}
+#mobileHeader #searchField #resultsOfSearch #resultItems .item .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+  flex: 1;
+  padding-left: 15px;
+}
+#mobileHeader #searchField #resultsOfSearch #resultItems .item .info .nameOfItem {
+  margin: 0;
+}
+#mobileHeader #searchField #resultsOfSearch #resultItems .item .info .price {
+  margin: 0;
+  color: #e60000;
+}
+#mobileHeader #searchField #resultsOfSearch #resultItems p {
+  font-size: 0.9rem;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  color: #333;
+}
 
 @media (min-width: 375px) {
   #mobileHeader #mobileSection1 #mobileCatalog {
