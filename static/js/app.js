@@ -1,6 +1,7 @@
 class App {
     constructor() {
         this.isNavOpen = false;
+        this.isLangOpen = false;
         this.catalog = JSON.parse($('header').attr('data-categories'));
         $('header').removeAttr('data-categories');
         this.langs = ['ua', 'ru'];
@@ -63,7 +64,11 @@ class App {
 
         $('#chooseLanguage').click(() => {
             // Opens menu to choose language
-            $('#panelWithAnotherLanguage').css('display' , 'flex');
+            if(!this.isLangOpen)
+                $('#panelWithAnotherLanguage').css('display' , 'flex');
+            else
+                $('#panelWithAnotherLanguage').css('display' , 'none');
+            this.isLangOpen = !this.isLangOpen;
         });
 
         $('#panelWithAnotherLanguage').click(() => {
