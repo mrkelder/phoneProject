@@ -106,6 +106,15 @@ class App {
                 }
             });
         });
+
+        $('#hotLine').click(() => {
+            // Enable hotLineBg
+            $('#hotLineBg').css('display' , 'flex');
+        });
+
+        $('#hotLineBg .closeButton').click(() => {
+            $('#hotLineBg').css('display' , 'none');
+        });
     }
 
     handlerForCities(e){

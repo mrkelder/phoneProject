@@ -1,0 +1,5 @@
+mixin underlinedInput( name , placeholder , someText , type)
+    .underlinedInput
+        if someText !== undefined
+            span #{someText}
+        input(type=`${type === undefined ? 'text' : type}`, name=`${name}` placeholder=`${placeholder === undefined ? '' : placeholder}`)

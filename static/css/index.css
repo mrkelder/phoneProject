@@ -348,6 +348,56 @@ button {
   font-size: 14px;
   color: #e60000;
 }
+#mobileHeader #hotLineBg {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a0a0aa1;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+}
+#mobileHeader #hotLineBg #hotLineWindow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding: 45px 15px;
+  box-sizing: border-box;
+  width: 87vw;
+  max-width: 450px;
+  height: 330px;
+  background-color: white;
+}
+#mobileHeader #hotLineBg #hotLineWindow * {
+  margin: 0;
+}
+#mobileHeader #hotLineBg #hotLineWindow h3 {
+  text-align: center;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  color: #333;
+}
+#mobileHeader #hotLineBg #hotLineWindow p {
+  text-align: center;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  color: #333;
+}
+#mobileHeader #hotLineBg #hotLineWindow .closeButton {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-image: url("/img/files/cross.svg");
+  background-color: transparent;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: 15px;
+  top: 15px;
+}
 #mobileHeader #catalog {
   overflow: hidden;
   display: none;
@@ -832,6 +882,40 @@ button {
 #desktopHeader section #bin {
     margin: 0 50px;
   }
+}
+.underlinedInput {
+  display: flex;
+  flex-direction: column;
+}
+.underlinedInput input {
+  height: 30px;
+  border: none;
+  outline: none;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #333;
+  border-bottom: 2px solid #999;
+}
+.underlinedInput input::placeholder {
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+.underlinedInput span {
+  font-family: "header", Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.redButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e60000;
+  border: none;
+  color: white;
+  font-family: "header", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  height: 50px;
 }
 
 /*# sourceMappingURL=index.css.map */

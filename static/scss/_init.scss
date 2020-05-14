@@ -71,3 +71,34 @@ button {
 }
 
 @import "header";
+
+.underlinedInput {
+    display: flex;
+    flex-direction: column;
+    input {
+        height: 30px;
+        @include input;
+        border-bottom: 2px solid $text_light_grey;
+        &::placeholder {
+            @include font("text");
+            font-size: 0.9rem;
+        }
+    }
+    span {
+        @include font("header");
+        font-size: 0.8rem;
+        color: $text_grey;
+    }
+}
+
+.redButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $red;
+    border: none;
+    color: $white;
+    @include font('header');
+    font-size: .9rem;
+    height: 50px;
+}
