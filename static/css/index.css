@@ -16,6 +16,57 @@ button {
   font-family: "text";
   src: url("/fonts/Manrope-Regular.ttf");
 }
+#hotLineBg {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a0a0aa1;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+}
+#hotLineBg #hotLineWindow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding: 45px 15px;
+  box-sizing: border-box;
+  width: 87vw;
+  max-width: 450px;
+  height: 330px;
+  background-color: white;
+}
+#hotLineBg #hotLineWindow * {
+  margin: 0;
+}
+#hotLineBg #hotLineWindow h3 {
+  text-align: center;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  color: #333;
+}
+#hotLineBg #hotLineWindow p {
+  text-align: center;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  color: #333;
+}
+#hotLineBg #hotLineWindow .closeButton {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-image: url("/img/files/cross.svg");
+  background-color: transparent;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: 15px;
+  top: 15px;
+}
+
 #desktopHeader {
   display: none;
 }
@@ -347,56 +398,6 @@ button {
   color: #333;
   font-size: 14px;
   color: #e60000;
-}
-#mobileHeader #hotLineBg {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #0a0a0aa1;
-  position: absolute;
-  z-index: 20;
-  top: 0;
-  left: 0;
-}
-#mobileHeader #hotLineBg #hotLineWindow {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  padding: 45px 15px;
-  box-sizing: border-box;
-  width: 87vw;
-  max-width: 450px;
-  height: 330px;
-  background-color: white;
-}
-#mobileHeader #hotLineBg #hotLineWindow * {
-  margin: 0;
-}
-#mobileHeader #hotLineBg #hotLineWindow h3 {
-  text-align: center;
-  font-family: "text", Arial, Helvetica, sans-serif;
-  color: #333;
-}
-#mobileHeader #hotLineBg #hotLineWindow p {
-  text-align: center;
-  font-family: "text", Arial, Helvetica, sans-serif;
-  color: #333;
-}
-#mobileHeader #hotLineBg #hotLineWindow .closeButton {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border: none;
-  background-image: url("/img/files/cross.svg");
-  background-color: transparent;
-  background-position: 50%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  right: 15px;
-  top: 15px;
 }
 #mobileHeader #catalog {
   overflow: hidden;

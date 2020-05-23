@@ -1,4 +1,5 @@
 header(data-categories=`${header.categories}`)
+    include hotLineWinodw.pug
     #mobileHeader
         #mobileSection1
             a(href="/")#logo
@@ -59,15 +60,7 @@ header(data-categories=`${header.categories}`)
                     span 0 800 40 40 40
                 #callMeBack
                     span #{header.lang === 'ua' ? 'Зателефонуйте зараз' :'Позвоните сейчас'}
-        #hotLineBg
-            #hotLineWindow
-                button.closeButton
-                h3 #{header.lang === 'ua' ? 'Ми передзвоним' :'Мы перезвоним'}
-                p #{header.lang === 'ua' ? 'Вкажіть свій номер телефону і ми вам зателефонуємо найближчим часом' :'Укажите свой номер телефона и мы вам перезвоним в ближайшее время'}
-                include underlined_input.pug
-                include red_btn.pug
-                +underlinedInput('name' , '+38(0XX) XXX-XX-XX' , 'Номер телефона' , 'tel')
-                +redButton('Перезвоните мне')
+        +hotLineWindow
         nav#catalog
             #catalog2
                 #headerOfCatalog2
@@ -95,25 +88,26 @@ header(data-categories=`${header.categories}`)
                     p #{header.lang === 'ua' ? 'Результатів немає' : 'Результатов нет' }
     #desktopHeader
         nav
-            .section1
-                a(href="#") #{header.lang === 'ua' ? 'Доставка і оплата' :'Доставка и оплата'}
-                a(href="#") #{header.lang === 'ua' ? 'Гарантія' :'Гарантия'}
-                a(href="#") #{header.lang === 'ua' ? 'Акції' :'Акции'}
-                a(href="#") #{header.lang === 'ua' ? 'Магазини' :'Магазины'}
-            .section2
-                #phoneNumber
-                    span 0 800 40 40 40
-                    .arrow
-                    .callMeBlock #{header.lang === 'ua' ? 'Ми передзвоним' :'Мы перезвоним'}
-                #city
-                    .locationSign
-                    span #{header.lang === 'ua' ? 'Київ' : 'Киев'}
-                #language
-                    span #{header.lang === 'ua' ? 'UA' :'RU'}
-                    .arrow
-                #myAccount
-                    .user
-                    span #{header.lang === 'ua' ? 'Мій обліковий запис' :'Моя учетная запись'}
+          .section1
+              a(href="#") #{header.lang === 'ua' ? 'Доставка і оплата' :'Доставка и оплата'}
+              a(href="#") #{header.lang === 'ua' ? 'Гарантія' :'Гарантия'}
+              a(href="#") #{header.lang === 'ua' ? 'Акції' :'Акции'}
+              a(href="#") #{header.lang === 'ua' ? 'Магазини' :'Магазины'}
+          .section2
+              #phoneNumber
+                  span 0 800 40 40 40
+                  .arrow
+                  .callMeBlock #{header.lang === 'ua' ? 'Ми передзвоним' :'Мы перезвоним'}
+              #city
+                  .locationSign
+                  span #{header.lang === 'ua' ? 'Київ' : 'Киев'}
+              #language
+                  span #{header.lang === 'ua' ? 'UA' :'RU'}
+                  .arrow
+              #myAccount
+                  .user
+                  span #{header.lang === 'ua' ? 'Мій обліковий запис' :'Моя учетная запись'}
+        +hotLineWindow
         section
             a(href="/").logo
                 img(src="/img/files/logo.svg", alt="logo")

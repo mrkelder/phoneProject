@@ -1,0 +1,10 @@
+mixin hotLineWindow
+  #hotLineBg
+    #hotLineWindow
+      button.closeButton
+      h3 #{header.lang === 'ua' ? 'Ми передзвоним' :'Мы перезвоним'}
+      p #{header.lang === 'ua' ? 'Вкажіть свій номер телефону і ми вам зателефонуємо найближчим часом' :'Укажите свой номер телефона и мы вам перезвоним в ближайшее время'}
+      include underlined_input.pug
+      include red_btn.pug
+      +underlinedInput('name' , '+38(0XX) XXX-XX-XX' , 'Номер телефона' , 'tel')
+      +redButton('Перезвоните мне')

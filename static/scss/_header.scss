@@ -1,3 +1,5 @@
+@import 'hotLineWindow';
+
 #desktopHeader {
     display: none;
 }
@@ -293,49 +295,49 @@
             }
         }
     }
-    #hotLineBg {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
-        background-color: #0a0a0aa1;
-        position: absolute;
-        z-index: 20;
-        top: 0;
-        left: 0;
-        #hotLineWindow {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            padding: 45px 15px;
-            box-sizing: border-box;
-            width: 87vw;
-            max-width: 450px;
-            height: 330px;
-            background-color: $white;
-            * {
-                margin: 0;
-            }
-            h3 {
-                text-align: center;
-                @include font("text");
-                color: $text_grey;
-            }
-            p {
-                text-align: center;
-                @include font("text");
-                color: $text_grey;
-            }
-            .closeButton {
-                position: absolute;
-                @include crossBtn;
-                right: 15px;
-                top: 15px;
-            }
-        }
-    }
+    // #hotLineBg {
+    //     display: none;
+    //     justify-content: center;
+    //     align-items: center;
+    //     width: 100vw;
+    //     height: 100vh;
+    //     background-color: #0a0a0aa1;
+    //     position: absolute;
+    //     z-index: 20;
+    //     top: 0;
+    //     left: 0;
+    //     #hotLineWindow {
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: space-between;
+    //         position: relative;
+    //         padding: 45px 15px;
+    //         box-sizing: border-box;
+    //         width: 87vw;
+    //         max-width: 450px;
+    //         height: 330px;
+    //         background-color: $white;
+    //         * {
+    //             margin: 0;
+    //         }
+    //         h3 {
+    //             text-align: center;
+    //             @include font("text");
+    //             color: $text_grey;
+    //         }
+    //         p {
+    //             text-align: center;
+    //             @include font("text");
+    //             color: $text_grey;
+    //         }
+    //         .closeButton {
+    //             position: absolute;
+    //             @include crossBtn;
+    //             right: 15px;
+    //             top: 15px;
+    //         }
+    //     }
+    // }
     #catalog {
         overflow: hidden;
         display: none;

@@ -217,6 +217,30 @@ class App {
         $('#productTopic').find(`[data-category="${currentCategory}"]`).css('background-color', '#f4f4f4');
       }
     });
+
+    $('#phoneNumber').click(() => {
+      // Enable hotLineBg
+      $('#hotLineBg').css('display', 'flex');
+    });
+
+    $('#hotLineBg .closeButton').click(() => {
+      // Closes hotline window
+      $('#hotLineBg').css('display', 'none');
+      $('#hotLineWindow input').val('');
+    });
+
+    $('#hotLineWindow .redButton').click(() => {
+      // Sends message to server and then to telegram chat with the phone
+      const condition = /^\+?(\d{2,3})?\s?\(?\d{2,3}\)?[ -]?\d{2,3}[ -]?\d{2,3}[ -]?\d{2,3}$/i;
+      const valueOfInput = $('#hotLineWindow input').val();
+      const exactNumber = [...valueOfInput].filter(i => !isNaN(i) && i !== ' ').join('');
+      if (valueOfInput.match(condition) !== null && (exactNumber.length === 10 || exactNumber.length === 12)) {
+        $.get('/sendPhoneToRecall', { number: exactNumber }, info => alert(info));
+        $('#hotLineBg').css('display', 'none');
+        $('#hotLineWindow input').val('');
+      }
+      else alert('Вы ввели номер телефона некоректно , попробуйте ещё раз.')
+    });
   }
   closeButton(element, ...elements) {
     // element is the element that we wonna close
