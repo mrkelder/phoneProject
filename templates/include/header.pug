@@ -96,28 +96,57 @@ header(data-categories=`${header.categories}`)
     #desktopHeader
         nav
             .section1
-                a(href="#") Доставка и оплата
-                a(href="#") Гарантия
-                a(href="#") Акции
-                a(href="#") Магазины
+                a(href="#") #{header.lang === 'ua' ? 'Доставка і оплата' :'Доставка и оплата'}
+                a(href="#") #{header.lang === 'ua' ? 'Гарантія' :'Гарантия'}
+                a(href="#") #{header.lang === 'ua' ? 'Акції' :'Акции'}
+                a(href="#") #{header.lang === 'ua' ? 'Магазини' :'Магазины'}
             .section2
                 #phoneNumber
                     span 0 800 40 40 40
                     .arrow
-                    .callMeBlock Перезвоните нам
+                    .callMeBlock #{header.lang === 'ua' ? 'Ми передзвоним' :'Мы перезвоним'}
                 #city
                     .locationSign
-                    span Киев
+                    span #{header.lang === 'ua' ? 'Київ' : 'Киев'}
                 #language
-                    span RU
+                    span #{header.lang === 'ua' ? 'UA' :'RU'}
                     .arrow
                 #myAccount
                     .user
-                    span Личный кабинет
+                    span #{header.lang === 'ua' ? 'Мій обліковий запис' :'Моя учетная запись'}
         section
             a(href="/").logo
                 img(src="/img/files/logo.svg", alt="logo")
-            h3 Каталог товаров
+            h3#openCatalog #{header.lang === 'ua' ? 'Каталог товарів' :'Каталог товаров'}
+            #catalog
+              #productTopic
+                each i in JSON.parse(header.categories)
+                  div(data-category=`${i._id}`).catalogElement
+                      div(style=`background-image: url('/img/files/${i.img}')` data-category=`${i._id}`).cotalogPhoto
+                      span(data-category=`${i._id}`) #{i.name[i.name.findIndex(a => a.lang === header.lang)].name}
+                      div(data-category=`${i._id}`).toCatalogElement
+              #products
+                ._products
+                  each i in JSON.parse(header.categories)[0].categories
+                    if i.position === 1
+                      .product
+                        h3 #{i.name[i.name.findIndex(e => e.lang === header.lang)].name}
+                        each e in i.companies
+                            a(href=`${e.link}`) #{e.name}
+                ._products
+                  each i in JSON.parse(header.categories)[0].categories
+                    if i.position === 2
+                      .product
+                        h3 #{i.name[i.name.findIndex(e => e.lang === header.lang)].name}
+                        each e in i.companies
+                            a(href=`${e.link}`) #{e.name}
+                ._products
+                  each i in JSON.parse(header.categories)[0].categories
+                    if i.position === 3
+                      .product
+                        h3 #{i.name[i.name.findIndex(e => e.lang === header.lang)].name}
+                        each e in i.companies
+                            a(href=`${e.link}`) #{e.name}
             .search
                 form#searchField
                     input(type="text" placeholder="Поиск товаров")#searchText

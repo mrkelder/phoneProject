@@ -36,8 +36,9 @@ async function utility(fastify, object) {
 
   fastify.get('/sendPhoneToRecall', async (req, reply) => {
     // Sends messages to the telegram group
-    await telegram.sendMessage({ chat_id: '-1001350737400', text: `Горячая линия: ${req.query.number}` });
-    reply.send('Мы перезвоним вам в ближайшее время');
+    telegram.sendMessage({ chat_id: '-1001350737400', text: `Горячая линия: ${req.query.number}` })
+      .then(() =>{ reply.send('Мы перезвоним вам в ближайшее время');})
+      .catch(err => fastify.checkError(err));
   });
 }
 

@@ -124,7 +124,7 @@ class App {
       const valueOfInput = $('#hotLineWindow input').val();
       const exactNumber = [...valueOfInput].filter(i => !isNaN(i) && i !== ' ').join('');
       if (valueOfInput.match(condition) !== null && (exactNumber.length === 10 || exactNumber.length === 12)) {
-        $.get('/sendPhoneToRecall', { number: exactNumber } , info => alert(info));
+        $.get('/sendPhoneToRecall', { number: exactNumber }, info => alert(info));
         $('#hotLineBg').css('display', 'none');
         $('#hotLineWindow input').val('');
       }
@@ -175,7 +175,48 @@ class App {
     });
   }
   header() {
+    $('#openCatalog').click(() => {
+      // Opens the catalog
+      if (this.isNavOpen) $('#catalog').css('display', 'none');
+      else $('#catalog').css('display', 'flex');
+      this.isNavOpen = !this.isNavOpen;
+    });
 
+    $('.catalogElement').mouseenter(e => {
+      // when hover catalog
+      const currentCategory = e.target.getAttribute('data-category');
+      $('#productTopic').find(`[data-category="${currentCategory}"]`).css('background-color', '#f4f4f4');
+    });
+
+    $('.catalogElement').mouseleave(e => {
+      // when leave catalog
+      const currentCategory = e.target.getAttribute('data-category');
+      $('#productTopic').find(`[data-category="${currentCategory}"]`).css('background-color', 'white');
+    });
+
+    $('.catalogElement').click(e => {
+      // Generates companies in the catalog
+      $('._products').find('*').remove();
+      const currentCategory = e.target.getAttribute('data-category');
+      try {
+        const product = this.catalog[this.catalog.findIndex(i => i._id === currentCategory)];
+        product.categories.forEach(i => {
+          let allCompanies = '';
+          i.companies.forEach(a => {
+            // Creates a list of all companies
+            allCompanies += `<a href="${a.link}">${a.name}</a>`;
+          });
+          $(`._products:nth-child(${i.position})`).append(`<div class="product"><h3>${i.name[i.name.findIndex(e => e.lang === $.cookie('lang'))].name}</h3>${allCompanies}</div>`)
+        });
+      }
+      catch (err) {
+        $(`._products:nth-child(2)`).append('<p class="catalogAnounce">Здесь пока что пусто</p>');
+      }
+      finally {
+        $('#productTopic').find('*').css('background-color', 'white');
+        $('#productTopic').find(`[data-category="${currentCategory}"]`).css('background-color', '#f4f4f4');
+      }
+    });
   }
   closeButton(element, ...elements) {
     // element is the element that we wonna close

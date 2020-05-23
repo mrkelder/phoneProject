@@ -70,7 +70,7 @@ fastify.decorate('lang', req => {
 
 fastify.decorate('categories', () => {
   // Creates an array with the categories
-  return new Promise((res, rej) => {
+  return new Promise(res => {
     fastify.mongodb(({ db, client }) => {
       db.collection('products').find().toArray(async (err, arr) => {
         await fastify.checkError(err);

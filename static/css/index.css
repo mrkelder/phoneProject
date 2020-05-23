@@ -706,6 +706,7 @@ button {
     left: -10px;
     font-family: "text", Arial, Helvetica, sans-serif;
     font-size: 0.9rem;
+    z-index: 20;
   }
   #desktopHeader nav .section2 #city {
     cursor: pointer;
@@ -763,6 +764,7 @@ button {
     margin: 0 15px;
   }
   #desktopHeader section {
+    position: relative;
     display: flex;
     width: 100vw;
     background-color: white;
@@ -784,6 +786,95 @@ button {
     margin: 0 30px;
     font-size: 24px;
     cursor: pointer;
+  }
+  #desktopHeader section #catalog {
+    box-shadow: 0px 4px 4px 0px #8f8f8f;
+    width: 80vw;
+    position: absolute;
+    top: 65px;
+    left: 101px;
+    display: none;
+  }
+  #desktopHeader section #catalog #productTopic {
+    width: 250px;
+    background-color: white;
+  }
+  #desktopHeader section #catalog #productTopic .catalogElement {
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 15px;
+  }
+  #desktopHeader section #catalog #productTopic .catalogElement:first-child {
+    background-color: #f4f4f4;
+  }
+  #desktopHeader section #catalog #productTopic .catalogElement span {
+    flex: 1;
+    text-align: center;
+    color: #333;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+  }
+  #desktopHeader section #catalog #productTopic .catalogElement .cotalogPhoto {
+    width: 25px;
+    height: 25px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  #desktopHeader section #catalog #productTopic .catalogElement .toCatalogElement {
+    width: 15px;
+    height: 15px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/img/files/arrow.png");
+    transform: rotate(-90deg);
+  }
+  #desktopHeader section #catalog #products {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 15px;
+    align-items: flex-start;
+  }
+  #desktopHeader section #catalog #products ._products {
+    margin: 0 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  #desktopHeader section #catalog #products ._products .catalogAnounce {
+    text-align: center;
+    font-size: 1rem;
+    font-family: "header", Arial, Helvetica, sans-serif;
+    color: #333;
+  }
+  #desktopHeader section #catalog #products ._products .product {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+  #desktopHeader section #catalog #products ._products .product h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: "header", Arial, Helvetica, sans-serif;
+    color: #333;
+  }
+  #desktopHeader section #catalog #products ._products .product a {
+    text-decoration: none;
+    border-bottom: 1px solid #999;
+    margin-bottom: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    color: #333;
   }
   #desktopHeader section .search {
     margin-left: 15px;
@@ -876,6 +967,11 @@ button {
   #desktopHeader nav,
 #desktopHeader section {
     padding: 7px 500px;
+  }
+  #desktopHeader nav #catalog,
+#desktopHeader section #catalog {
+    width: 50vw;
+    left: 501px;
   }
   #desktopHeader section #match,
 #desktopHeader section #favorite,

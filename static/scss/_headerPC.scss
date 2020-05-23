@@ -1,227 +1,319 @@
 // It's exported to _header.scss
 @media (min-width: 1024px) {
-    #mobileHeader {
-        // #mobileHeader is deleted by app.js
-        display: none;
+  #mobileHeader {
+    // #mobileHeader is deleted by app.js
+    display: none;
+  }
+  #desktopHeader {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    nav,
+    section {
+      padding: 7px 30px;
     }
-    #desktopHeader {
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $grey;
+      .section1 {
+        a {
+          margin: 0 15px;
+          color: $white;
+          @include font("text");
+          text-decoration: none;
+          font-size: 0.9rem;
+        }
+      }
+      .section2 {
         display: flex;
-        width: 100vw;
-        flex-direction: column;
-        nav,
-        section {
-            padding: 7px 30px;
+        #phoneNumber {
+          position: relative;
+          cursor: pointer;
+          &:hover > .arrow {
+            transform: rotate(180deg);
+          }
+          &:hover > .callMeBlock {
+            display: block;
+          }
+          span {
+            @include font("text");
+            color: $white;
+            font-size: 0.9rem;
+            margin-right: 5px;
+          }
+          .arrow {
+            @include arrow;
+            background-image: url("/img/files/arrow_w.png");
+          }
+          .callMeBlock {
+            display: none;
+            width: 121px;
+            position: absolute;
+            padding: 7px;
+            color: $white;
+            background-color: #4a4d4eed;
+            top: 26px;
+            left: -10px;
+            @include font("text");
+            font-size: 0.9rem;
+            z-index: 20;
+          }
         }
-        nav {
+        #city {
+          cursor: pointer;
+          .locationSign {
+            @include locationSign;
+            background-image: url("/img/files/location_w.png");
+            width: 18px;
+            height: 18px;
+          }
+          span {
+            margin-left: 5px;
+            color: $white;
+            @include font("text");
+            font-size: 0.9rem;
+          }
+        }
+        #language {
+          span {
+            margin-right: 5px;
+            color: $white;
+            @include font("text");
+            font-size: 0.9rem;
+          }
+          .arrow {
+            @include arrow;
+            background-image: url("/img/files/arrow_w.png");
+          }
+        }
+        #myAccount {
+          span {
+            margin-left: 5px;
+            color: $white;
+            @include font("text");
+            font-size: 0.9rem;
+          }
+          .user {
+            width: 25px;
+            height: 25px;
+            background-image: url("/img/files/user_w.png");
+            @include bg;
+          }
+        }
+        > {
+          div {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            background-color: $grey;
-            .section1 {
-                a {
-                    margin: 0 15px;
-                    color: $white;
-                    @include font("text");
-                    text-decoration: none;
-                    font-size: 0.9rem;
-                }
+            cursor: pointer;
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+    section {
+      position: relative;
+      display: flex;
+      width: 100vw;
+      background-color: $white;
+      align-items: center;
+      box-sizing: border-box;
+      .logo {
+        width: 40px;
+        height: 40px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      h3 {
+        @include font("text");
+        color: $text_grey;
+        font-weight: lighter;
+        margin: 0 30px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      #catalog {
+        box-shadow: 0px 4px 4px 0px #8f8f8f;
+        width: 80vw;
+        position: absolute;
+        top: 65px;
+        left: 101px;
+        display: none; // flex
+        #productTopic {
+          width: 250px;
+          background-color: $white;
+          .catalogElement {
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            padding: 0 15px;
+            &:first-child{
+              background-color: $light_grey;
             }
-            .section2 {
+            span {
+              flex: 1;
+              text-align: center;
+              color: $text_grey;
+              @include font("text");
+              font-size: 1rem;
+            }
+            .cotalogPhoto {
+              width: 25px;
+              height: 25px;
+              @include bg;
+            }
+            .toCatalogElement {
+              width: 15px;
+              height: 15px;
+              @include bg;
+              background-image: url("/img/files/arrow.png");
+              transform: rotate(-90deg);
+            }
+          }
+        }
+        #products {
+          overflow: hidden;
+          display: flex;
+          flex-wrap: wrap;
+          flex: 1;
+          background-color: $light_grey;
+          // background-color: yellow;
+          padding: 15px;
+          align-items: flex-start;
+          ._products {
+            margin: 0 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            .catalogAnounce{
+              text-align: center;
+              font-size: 1rem;
+              @include font('header');
+              color: $text_grey;
+            }
+            .product {
+              display: flex;
+              flex-direction: column;
+              margin: 5px;
+              h3 {
+                margin: 0;
+                font-size: 1.2rem;
+                @include font("header");
+                color: $text_grey;
+              }
+              a {
+                text-decoration: none;
+                border-bottom: 1px solid $text_light_grey;
+                margin-bottom: 10px;
+                height: 50px;
                 display: flex;
-                #phoneNumber {
-                    position: relative;
-                    cursor: pointer;
-                    &:hover > .arrow {
-                        transform: rotate(180deg);
-                    }
-                    &:hover > .callMeBlock {
-                        display: block;
-                    }
-                    span {
-                        @include font("text");
-                        color: $white;
-                        font-size: 0.9rem;
-                        margin-right: 5px;
-                    }
-                    .arrow {
-                        @include arrow;
-                        background-image: url("/img/files/arrow_w.png");
-                    }
-                    .callMeBlock {
-                        display: none;
-                        width: 121px;
-                        position: absolute;
-                        padding: 7px;
-                        color: $white;
-                        background-color: #4a4d4eed;
-                        top: 26px;
-                        left: -10px;
-                        @include font("text");
-                        font-size: 0.9rem;
-                    }
-                }
-                #city {
-                    cursor: pointer;
-                    .locationSign {
-                        @include locationSign;
-                        background-image: url("/img/files/location_w.png");
-                        width: 18px;
-                        height: 18px;
-                    }
-                    span {
-                        margin-left: 5px;
-                        color: $white;
-                        @include font("text");
-                        font-size: 0.9rem;
-                    }
-                }
-                #language {
-                    span {
-                        margin-right: 5px;
-                        color: $white;
-                        @include font("text");
-                        font-size: 0.9rem;
-                    }
-                    .arrow {
-                        @include arrow;
-                        background-image: url("/img/files/arrow_w.png");
-                    }
-                }
-                #myAccount {
-                    span {
-                        margin-left: 5px;
-                        color: $white;
-                        @include font("text");
-                        font-size: 0.9rem;
-                    }
-                    .user {
-                        width: 25px;
-                        height: 25px;
-                        background-image: url("/img/files/user_w.png");
-                        @include bg;
-                    }
-                }
-                > {
-                    div {
-                        display: flex;
-                        align-items: center;
-                        cursor: pointer;
-                        margin: 0 15px;
-                    }
-                }
-            }
-        }
-        section {
-            display: flex;
-            width: 100vw;
-            background-color: $white;
-            align-items: center;
-            box-sizing: border-box;
-            .logo {
-                width: 40px;
-                height: 40px;
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-            h3 {
+                align-items: center;
+                font-size: 1rem;
                 @include font("text");
                 color: $text_grey;
-                font-weight: lighter;
-                margin: 0 30px;
-                font-size: 24px;
-                cursor: pointer;
+              }
             }
-            .search {
-                margin-left: 15px;
-                flex: 1;
-                padding: 0 10px;
-                #searchField {
-                    display: flex;
-                    padding: 15px 0;
-                    box-sizing: border-box;
-                    align-items: center;
-                    height: 50px;
-                    #searchText {
-                        flex: 1;
-                        border: none;
-                        outline: none;
-                        @include font("text");
-                        font-size: 0.9rem;
-                        color: $text_grey;
-                    }
-                    #searchReset {
-                        @include crossBtn;
-                        background-image: url("/img/files/crossRed.svg");
-                        outline: none;
-                        margin: 0 10px;
-                    }
-                    #searchSubmit {
-                        @include crossBtn;
-                        background-image: url("/img/files/search.svg");
-                        outline: none;
-                        margin: 0 10px;
-                    }
-                    .verticalDiv {
-                        width: 0.8px;
-                        height: 20.8px;
-                        background-color: $grey;
-                    }
-                }
-                .verticalDiv2 {
-                    height: 1px;
-                    background-color: $grey;
-                }
-            }
-            #match,
-            #favorite,
-            #bin {
-                width: 35px;
-                height: 35px;
-                @include bg;
-                margin: 0 25px;
-                cursor: pointer;
-            }
-            #match {
-                background-image: url("/img/files/scales.png");
-            }
-            #favorite {
-                background-image: url("/img/files/favorite.png");
-            }
-            #bin {
-                background-image: url("/img/files/bin.png");
-            }
+          }
         }
+      }
+      .search {
+        margin-left: 15px;
+        flex: 1;
+        padding: 0 10px;
+        #searchField {
+          display: flex;
+          padding: 15px 0;
+          box-sizing: border-box;
+          align-items: center;
+          height: 50px;
+          #searchText {
+            flex: 1;
+            border: none;
+            outline: none;
+            @include font("text");
+            font-size: 0.9rem;
+            color: $text_grey;
+          }
+          #searchReset {
+            @include crossBtn;
+            background-image: url("/img/files/crossRed.svg");
+            outline: none;
+            margin: 0 10px;
+          }
+          #searchSubmit {
+            @include crossBtn;
+            background-image: url("/img/files/search.svg");
+            outline: none;
+            margin: 0 10px;
+          }
+          .verticalDiv {
+            width: 0.8px;
+            height: 20.8px;
+            background-color: $grey;
+          }
+        }
+        .verticalDiv2 {
+          height: 1px;
+          background-color: $grey;
+        }
+      }
+      #match,
+      #favorite,
+      #bin {
+        width: 35px;
+        height: 35px;
+        @include bg;
+        margin: 0 25px;
+        cursor: pointer;
+      }
+      #match {
+        background-image: url("/img/files/scales.png");
+      }
+      #favorite {
+        background-image: url("/img/files/favorite.png");
+      }
+      #bin {
+        background-image: url("/img/files/bin.png");
+      }
     }
+  }
 }
 @media (min-width: 1440px) {
-    #desktopHeader {
-        nav,
-        section {
-            padding: 7px 100px;
-        }
-        section {
-            #match,
-            #favorite,
-            #bin {
-                margin: 0 30px;
-            }
-        }
+  #desktopHeader {
+    nav,
+    section {
+      padding: 7px 100px;
     }
+    section {
+      #match,
+      #favorite,
+      #bin {
+        margin: 0 30px;
+      }
+    }
+  }
 }
 @media (min-width: 2560px) {
-    #desktopHeader {
-        nav,
-        section {
-            padding: 7px 500px;
-        }
-        section {
-            #match,
-            #favorite,
-            #bin {
-                margin: 0 50px;
-            }
-        }
+  #desktopHeader {
+    nav,
+    section {
+      padding: 7px 500px;
+      #catalog{
+        width: 50vw;
+        left: 501px;
+      }
     }
+    section {
+      #match,
+      #favorite,
+      #bin {
+        margin: 0 50px;
+      }
+    }
+  }
 }
