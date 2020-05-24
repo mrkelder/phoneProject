@@ -81,7 +81,7 @@
           &:hover > .arrow {
             transform: rotate(180deg);
           }
-          &:hover > .changeLang{
+          &:hover > .changeLang {
             display: block;
           }
           span {
@@ -251,6 +251,49 @@
           box-sizing: border-box;
           align-items: center;
           height: 50px;
+          #resultsOfSearch {
+            display: none;
+            top: 60px;
+            position: absolute;
+            padding: 10px 15px;
+            box-sizing: border-box;
+            background-color: $white;
+            box-shadow: 0px 4px 4px 0px #8f8f8f;
+            .item {
+              text-decoration: none;
+              color: $text_grey;
+              @include font("text");
+              font-size: 0.9rem;
+              display: flex;
+              background-color: $white;
+              box-sizing: border-box;
+              padding: 8px;
+              img {
+                width: 75px;
+                height: 75px;
+              }
+              .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                overflow: hidden;
+                flex: 1;
+                padding-left: 15px;
+                .nameOfItem {
+                  margin: 0;
+                }
+                .price {
+                  margin: 0;
+                  color: $red;
+                }
+              }
+            }
+            p {
+              font-size: 0.9rem;
+              @include font("text");
+              color: $text_grey;
+            }
+          }
           #searchText {
             flex: 1;
             border: none;

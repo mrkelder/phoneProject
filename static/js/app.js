@@ -92,19 +92,23 @@ class App {
       $('#resultItems').append(`<p> ${$.cookie('lang') === 'ua' ? 'Результатів немає' : 'Результатов нет'} </p>`);
     });
 
-    $('#searchText').on('input', e => {
-      $.get('/findItem', { itemName: e.target.value }, info => {
-        const items = JSON.parse(info);
-        $('#resultItems').find('.item , p').remove();
-        if (items.length === 0) {
-          $('#resultItems').append(`<p> ${$.cookie('lang') === 'ua' ? 'Результатів немає' : 'Результатов нет'} </p>`);
-        }
-        else {
-          for (let i of items) {
-            $('#resultItems').append(`<a class="item" href="#"><img src="/img/products/${i.themes[0].major_photo}" alt="товар"><div class="info"><p class="nameOfItem">${i.name}</p><p class="price">${i.price}</p></div></a>`);
+    $('#searchText').on('input', async e => {
+      // Searched for products (mobile)
+      const resultBlock = $('#resultItems');
+      this.findItem(
+        {
+          value: e.target.value,
+          resultBlock: resultBlock,
+          errorFunc() {
+            resultBlock.append(`<p> ${$.cookie('lang') === 'ua' ? 'Результатів немає' : 'Результатов нет'} </p>`);
+          },
+          successFunc(items) {
+            for (let i of items) {
+              resultBlock.append(`<a class="item" href="#"><img src="/img/products/${i.themes[0].major_photo}" alt="товар"><div class="info"><p class="nameOfItem">${i.name}</p><p class="price">${i.price}</p></div></a>`);
+            }
           }
         }
-      });
+      );
     });
 
     $('#hotLine').click(() => {
@@ -175,6 +179,8 @@ class App {
     });
   }
   header() {
+    $('#resultsOfSearch').css('width' , $('#searchField').css('width')); // Makes catalog the same width as search field
+
     $('#openCatalog').click(() => {
       // Opens the catalog
       if (this.isNavOpen) $('#catalog').css('display', 'none');
@@ -244,10 +250,35 @@ class App {
 
     $('.changeLang').click(() => {
       // Changes language
-      $.cookie('lang') === 'ua' ? $.cookie('lang' , this.langs[1]) : $.cookie('lang' , this.langs[0]);
+      $.cookie('lang') === 'ua' ? $.cookie('lang', this.langs[1]) : $.cookie('lang', this.langs[0]);
       $('.changeLang').css('display', 'none');
       location.reload();
     });
+
+    $('#searchText').on('input' , e => {
+      // Searches for products (desktop)
+      const resultBlock = $('#resultsOfSearch');
+      resultBlock.css('display' , 'block');
+      this.findItem(
+        {
+          value: e.target.value,
+          resultBlock: resultBlock,
+          errorFunc() {
+            resultBlock.append(`<p> ${$.cookie('lang') === 'ua' ? 'Результатів немає' : 'Результатов нет'} </p>`);
+          },
+          successFunc(items) {
+            for (let i of items) {
+              resultBlock.append(`<a class="item" href="#"><img src="/img/products/${i.themes[0].major_photo}" alt="товар"><div class="info"><p class="nameOfItem">${i.name}</p><p class="price">${i.price}</p></div></a>`);
+            }
+          }
+        }
+      );
+    });
+
+    $('#searchText').blur(() => {
+      // Closes search results
+      $('#resultsOfSearch').css('display' , 'none');
+    })
   }
   closeButton(element, ...elements) {
     // element is the element that we wonna close
@@ -258,6 +289,14 @@ class App {
         $(`#${element}`).css('display', 'none');
       });
     }
+  }
+  findItem({ value, resultBlock, errorFunc, successFunc }) {
+    $.get('/findItem', { itemName: value }, info => {
+      const items = JSON.parse(info);
+      resultBlock.find('.item , p').remove();
+      if (items.length === 0) errorFunc();
+      else successFunc(items);
+    });
   }
 }
 
