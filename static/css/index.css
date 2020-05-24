@@ -729,6 +729,15 @@ button {
     font-family: "text", Arial, Helvetica, sans-serif;
     font-size: 0.9rem;
   }
+  #desktopHeader nav .section2 #language {
+    position: relative;
+  }
+  #desktopHeader nav .section2 #language:hover > .arrow {
+    transform: rotate(180deg);
+  }
+  #desktopHeader nav .section2 #language:hover > .changeLang {
+    display: block;
+  }
   #desktopHeader nav .section2 #language span {
     margin-right: 5px;
     color: white;
@@ -743,6 +752,19 @@ button {
     background-repeat: no-repeat;
     background-image: url("/img/files/arrow.png");
     background-image: url("/img/files/arrow_w.png");
+  }
+  #desktopHeader nav .section2 #language .changeLang {
+    display: none;
+    width: 20px;
+    position: absolute;
+    padding: 7px;
+    color: white;
+    background-color: #4a4d4eed;
+    top: 26px;
+    left: 0px;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    z-index: 20;
   }
   #desktopHeader nav .section2 #myAccount span {
     margin-left: 5px;

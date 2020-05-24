@@ -241,6 +241,13 @@ class App {
       }
       else alert('Вы ввели номер телефона некоректно , попробуйте ещё раз.')
     });
+
+    $('.changeLang').click(() => {
+      // Changes language
+      $.cookie('lang') === 'ua' ? $.cookie('lang' , this.langs[1]) : $.cookie('lang' , this.langs[0]);
+      $('.changeLang').css('display', 'none');
+      location.reload();
+    });
   }
   closeButton(element, ...elements) {
     // element is the element that we wonna close
