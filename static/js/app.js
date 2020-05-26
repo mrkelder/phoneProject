@@ -179,7 +179,7 @@ class App {
     });
   }
   header() {
-    $('#resultsOfSearch').css('width' , $('#searchField').css('width')); // Makes catalog the same width as search field
+    $('#resultsOfSearch').css('width', $('#searchField').css('width')); // Makes catalog the same width as search field
 
     $('#openCatalog').click(() => {
       // Opens the catalog
@@ -255,10 +255,11 @@ class App {
       location.reload();
     });
 
-    $('#searchText').on('input' , e => {
+    $('#searchText').on('input', e => {
       // Searches for products (desktop)
       const resultBlock = $('#resultsOfSearch');
-      resultBlock.css('display' , 'block');
+      console.log(e.target.value.length)
+      resultBlock.css('display', 'block');
       this.findItem(
         {
           value: e.target.value,
@@ -273,11 +274,25 @@ class App {
           }
         }
       );
+      if (e.target.value.length === 0) {
+        // Checks is search empty
+        resultBlock.css('display', 'none');
+        $('#searchReset').css('display', 'none');
+      }
+      else {
+        resultBlock.css('display', 'block');
+        $('#searchReset').css('display', 'block');
+      }
+    });
+
+    $('#searchReset').click(() => {
+      // Resets search
+      $('#searchReset').css('display', 'none');
     });
 
     $('#searchText').blur(() => {
       // Closes search results
-      $('#resultsOfSearch').css('display' , 'none');
+      $('#resultsOfSearch').css('display', 'none');
     })
   }
   closeButton(element, ...elements) {

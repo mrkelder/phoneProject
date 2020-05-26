@@ -963,6 +963,7 @@ button {
     color: #333;
   }
   #desktopHeader section .search #searchField #searchReset {
+    display: none;
     width: 25px;
     height: 25px;
     border: none;

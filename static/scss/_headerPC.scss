@@ -303,6 +303,7 @@
             color: $text_grey;
           }
           #searchReset {
+            display: none;
             @include crossBtn;
             background-image: url("/img/files/crossRed.svg");
             outline: none;
