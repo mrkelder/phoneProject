@@ -55,6 +55,7 @@ button {
 }
 #hotLineBg #hotLineWindow .closeButton {
   position: absolute;
+  cursor: pointer;
   width: 25px;
   height: 25px;
   border: none;
@@ -147,6 +148,7 @@ button {
   margin: 0;
 }
 #mobileHeader #chooseCityBg #chooseCity #chooseHeaderSection button {
+  cursor: pointer;
   width: 25px;
   height: 25px;
   border: none;
@@ -259,6 +261,7 @@ button {
   top: 14px;
 }
 #mobileHeader #mobileMenu1 #userSection button {
+  cursor: pointer;
   width: 25px;
   height: 25px;
   border: none;
@@ -429,6 +432,7 @@ button {
   justify-content: center;
 }
 #mobileHeader #catalog #catalog2 #headerOfCatalog2 button {
+  cursor: pointer;
   width: 25px;
   height: 25px;
   border: none;
@@ -467,6 +471,7 @@ button {
   justify-content: center;
 }
 #mobileHeader #catalog #headerOfCatalog button {
+  cursor: pointer;
   width: 25px;
   height: 25px;
   border: none;
@@ -540,6 +545,7 @@ button {
   color: #333;
 }
 #mobileHeader #searchField #searchReset {
+  cursor: pointer;
   width: 25px;
   height: 25px;
   border: none;
@@ -554,6 +560,7 @@ button {
 }
 #mobileHeader #searchField #searchSubmit {
   margin: 0 5px;
+  cursor: pointer;
   width: 25px;
   height: 25px;
   border: none;
@@ -650,6 +657,105 @@ button {
     display: flex;
     width: 100vw;
     flex-direction: column;
+  }
+  #desktopHeader #chooseCityBg {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #0a0a0aa1;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 50;
+  }
+  #desktopHeader #chooseCityBg #chooseCity {
+    box-shadow: 0px 4px 4px 0px #444444d4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    padding: 20px 15px 75px;
+    background-color: white;
+  }
+  #desktopHeader #chooseCityBg #chooseCity h2 {
+    font-family: "header", Arial, Helvetica, sans-serif;
+    color: #333;
+  }
+  #desktopHeader #chooseCityBg #chooseCity .closeButton {
+    position: absolute;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-image: url("/img/files/cross.svg");
+    background-color: transparent;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 7px;
+    right: 10px;
+  }
+  #desktopHeader #chooseCityBg #chooseCity #cityList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 250px;
+  }
+  #desktopHeader #chooseCityBg #chooseCity #cityList a {
+    margin: 0 15px;
+    font-family: "text", Arial, Helvetica, sans-serif;
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 26px;
+    cursor: pointer;
+  }
+  #desktopHeader #chooseCityBg #chooseCity hr {
+    margin: 0;
+    border: 0.5px solid #4a4d4e;
+    margin: 5px 0;
+    width: 250px;
+  }
+  #desktopHeader #chooseCityBg #chooseCity h3 {
+    font-family: "header", Arial, Helvetica, sans-serif;
+    color: #333;
+  }
+  #desktopHeader #chooseCityBg #chooseCity .underlinedInput {
+    width: 250px;
+  }
+  #desktopHeader #chooseCityBg #chooseCity #cityOutput {
+    overflow: hidden;
+    overflow-y: scroll;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 4px 4px 0px #444444d4;
+    width: 250px;
+    height: 120px;
+    background-color: white;
+    position: absolute;
+    bottom: -52px;
+  }
+  #desktopHeader #chooseCityBg #chooseCity #cityOutput .city {
+    cursor: pointer;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+  #desktopHeader #chooseCityBg #chooseCity #cityOutput .city span {
+    font-size: 0.9rem;
+    color: #333;
+    font-family: "text", Arial, Helvetica, sans-serif;
+  }
+  #desktopHeader #chooseCityBg #chooseCity #cityOutput .city b {
+    display: none;
+  }
+  #desktopHeader #chooseCityBg #chooseCity #cityOutput hr {
+    margin: 0;
+    border: 0.5px solid #4a4d4e;
   }
   #desktopHeader nav,
 #desktopHeader section {
@@ -964,6 +1070,7 @@ button {
   }
   #desktopHeader section .search #searchField #searchReset {
     display: none;
+    cursor: pointer;
     width: 25px;
     height: 25px;
     border: none;
@@ -977,6 +1084,7 @@ button {
     margin: 0 10px;
   }
   #desktopHeader section .search #searchField #searchSubmit {
+    cursor: pointer;
     width: 25px;
     height: 25px;
     border: none;

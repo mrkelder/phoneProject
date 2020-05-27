@@ -1,5 +1,6 @@
 header(data-categories=`${header.categories}`)
     include hotLineWinodw.pug
+    include underlined_input.pug
     #mobileHeader
         #mobileSection1
             a(href="/")#logo
@@ -87,6 +88,18 @@ header(data-categories=`${header.categories}`)
                 #resultItems
                     p #{header.lang === 'ua' ? 'Результатів немає' : 'Результатов нет' }
     #desktopHeader
+        #chooseCityBg
+          #chooseCity
+            button.closeButton
+            h2 #{header.lang === 'ua' ? 'Виберіть своє місто' :'Выберите свой город'}
+            #cityList
+              each i in header.cities
+                a(data-id=`${i._id}` data-city=`${JSON.stringify(i.city)}`).city #{i.city[i.city.findIndex(e => e.lang === header.lang)].name}
+            hr
+            h3 #{header.lang === 'ua' ? 'Або введіть населений пункт' :'Или введите населенный пункт'}
+            - const placeholder = header.lang === 'ua' ? 'Вкажіть місто' : 'Укажите город';
+            +underlinedInput('city' , placeholder , undefined , 'text')
+            #cityOutput
         nav
           .section1
               a(href="#") #{header.lang === 'ua' ? 'Доставка і оплата' :'Доставка и оплата'}

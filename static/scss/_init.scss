@@ -4,101 +4,103 @@ $grey: #4a4d4e;
 $light_grey: #f4f4f4;
 $text_grey: #333;
 $text_light_grey: #999;
+$window_bg: #0a0a0aa1;
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: $light_grey;
+  margin: 0;
+  padding: 0;
+  background-color: $light_grey;
 }
 button {
-    outline: none;
+  outline: none;
 }
 
 @font-face {
-    font-family: "header";
-    src: url("/fonts/Manrope-ExtraBold.ttf");
+  font-family: "header";
+  src: url("/fonts/Manrope-ExtraBold.ttf");
 }
 
 @font-face {
-    font-family: "text";
-    src: url("/fonts/Manrope-Regular.ttf");
+  font-family: "text";
+  src: url("/fonts/Manrope-Regular.ttf");
 }
 
 @mixin font($font) {
-    font-family: $font, Arial, Helvetica, sans-serif;
+  font-family: $font, Arial, Helvetica, sans-serif;
 }
 
 @mixin bg {
-    background-position: 50%;
-    background-size: contain;
-    background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 @mixin crossBtn {
-    width: 25px;
-    height: 25px;
-    border: none;
-    background-image: url("/img/files/cross.svg");
-    background-color: transparent;
-    @include bg;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-image: url("/img/files/cross.svg");
+  background-color: transparent;
+  @include bg;
 }
 
 @mixin arrow {
-    width: 14px;
-    height: 14px;
-    @include bg;
-    background-image: url("/img/files/arrow.png");
+  width: 14px;
+  height: 14px;
+  @include bg;
+  background-image: url("/img/files/arrow.png");
 }
 
 @mixin locationSign {
-    width: 20px;
-    height: 20px;
-    @include bg;
-    background-image: url("/img/files/location.png");
+  width: 20px;
+  height: 20px;
+  @include bg;
+  background-image: url("/img/files/location.png");
 }
 
 @mixin hr {
-    margin: 0;
-    border: 0.5px solid $grey;
+  margin: 0;
+  border: 0.5px solid $grey;
 }
 
 @mixin input {
-    border: none;
-    outline: none;
-    @include font("text");
-    font-size: 0.9rem;
-    color: $text_grey;
+  border: none;
+  outline: none;
+  @include font("text");
+  font-size: 0.9rem;
+  color: $text_grey;
 }
 
 @import "header";
 
 .underlinedInput {
-    display: flex;
-    flex-direction: column;
-    input {
-        height: 30px;
-        @include input;
-        border-bottom: 2px solid $text_light_grey;
-        &::placeholder {
-            @include font("text");
-            font-size: 0.9rem;
-        }
+  display: flex;
+  flex-direction: column;
+  input {
+    height: 30px;
+    @include input;
+    border-bottom: 2px solid $text_light_grey;
+    &::placeholder {
+      @include font("text");
+      font-size: 0.9rem;
     }
-    span {
-        @include font("header");
-        font-size: 0.8rem;
-        color: $text_grey;
-    }
+  }
+  span {
+    @include font("header");
+    font-size: 0.8rem;
+    color: $text_grey;
+  }
 }
 
-.redButton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $red;
-    border: none;
-    color: $white;
-    @include font('header');
-    font-size: .9rem;
-    height: 50px;
+.redButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $red;
+  border: none;
+  color: $white;
+  @include font("header");
+  font-size: 0.9rem;
+  height: 50px;
 }
