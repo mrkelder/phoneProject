@@ -273,7 +273,6 @@ class App {
     $('#searchText').on('input', e => {
       // Searches for products (desktop)
       const resultBlock = $('#resultsOfSearch');
-      console.log(e.target.value.length)
       resultBlock.css('display', 'block');
       this.findItem(
         {
@@ -347,15 +346,4 @@ class App {
       else successFunc(items);
     });
   }
-}
-
-const app = new App();
-
-if ($('body')[0].clientWidth < 1024) {
-  $('#desktopHeader').remove();
-  app.mobileHeader();
-}
-else {
-  $('#mobileHeader').remove();
-  app.header();
 }

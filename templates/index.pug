@@ -7,4 +7,9 @@ html(lang=`${ header.lang === 'ua' ? 'ua' : 'ru'}`)
         title PhoneShop
     body
         include include/header.pug
+        include include/slider.pug
+        main
+          +slider(slides)
         include include/footer.pug
+        script(src="/js/slider.js")
+        script(src="/js/index.js")
