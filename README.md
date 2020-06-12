@@ -9,7 +9,7 @@ So let me know if I did something wrong or you could do better. Thanks!
 Follow the instructions below to run the project.
 
 1. npm i - command to download all dependencies
-2. node app - command to run SCSS interpretation
+2. node app - command to run the project
 3. npm run sass - command to run SCSS interpretation
 4. this project is using *mongodb* , so download it if you haven't got that
 
