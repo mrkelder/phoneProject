@@ -1,514 +1,519 @@
-@import 'hotLineWindow';
+@import "hotLineWindow";
 
 #desktopHeader {
-    display: none;
+  display: none;
 }
 #mobileHeader {
+  display: flex;
+  background-color: $white;
+  height: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-around;
+  #mobileSection1 {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    #logo {
+      width: 35px;
+      height: 35px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    #mobileCatalog {
+      margin-left: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      img {
+        width: 15px;
+        height: 15px;
+      }
+      span {
+        color: $red;
+        @include font("text");
+        margin-left: 5px;
+      }
+    }
+  }
+  #chooseCityBg {
+    z-index: 102;
+    display: none;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $window_bg;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    #chooseCity {
+      z-index: 103;
+      overflow: hidden;
+      width: 75vw;
+      height: 75vh;
+      background-color: #fff;
+      #chooseHeaderSection {
+        padding: 0 15px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .location {
+          @include locationSign;
+        }
+        h5 {
+          @include font("text");
+          margin: 0;
+        }
+        button {
+          @include crossBtn;
+        }
+      }
+      hr {
+        @include hr;
+      }
+      #cities {
+        padding: 5px 15px;
+        input {
+          width: 100%;
+          margin: 25px 0 5px;
+          @include input;
+        }
+        #cityList {
+          margin-top: 15px;
+          overflow-y: scroll;
+          height: 48vh;
+          .city {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 50px;
+            span {
+              margin-left: 15px;
+              @include font("text");
+              font-size: 0.9rem;
+              color: $text_grey;
+            }
+            b {
+              margin-left: 15px;
+              @include font("text");
+              font-size: 0.8rem;
+              color: $text_grey;
+            }
+          }
+        }
+      }
+    }
+  }
+  #mobileSection2 {
+    display: flex;
+    justify-content: center;
+    align-items: cneter;
+    #searchIcon {
+      width: 25px;
+      height: 25px;
+      margin-right: 15px;
+    }
+    #menuButton {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  #greyBackgound {
+    z-index: 100;
+    display: none;
+    background-color: $window_bg;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .verticalDiv {
+    width: 0.8px;
+    height: 20.8px;
+    background-color: $grey;
+  }
+  #mobileMenu1 {
+    z-index: 101;
+    // display: flex;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 96vw;
+    height: 100vh;
     background-color: $white;
-    height: 50px;
-    width: 100%;
+    right: 0;
+    top: 0;
+    #userSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      padding: 2px 14px;
+      a {
+        margin-left: 30px;
+        text-decoration: none;
+        color: $text_grey;
+        @include font("header");
+        &::before {
+          content: "";
+          width: 25px;
+          height: 25px;
+          background-image: url("/img/files/user.png");
+          @include bg;
+          position: absolute;
+          left: 10px;
+          top: 14px;
+        }
+      }
+      button {
+        @include crossBtn;
+      }
+    }
+    hr {
+      @include hr;
+    }
+    #locationSection {
+      display: flex;
+      align-items: center;
+      padding: 2px 14px;
+      .locatonSection {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        height: 45px;
+        p {
+          @include font("text");
+          font-size: 0.9rem;
+          margin: 0;
+          margin-left: 10px;
+        }
+      }
+      #mainCity {
+        .locationSign {
+          @include locationSign;
+        }
+      }
+      #chooseLanguage {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        #panelWithAnotherLanguage {
+          display: none;
+          align-items: center;
+          width: 100%;
+          height: 50px;
+          top: 50px;
+          background-color: $white;
+          position: absolute;
+          box-shadow: 1px 1px 4px 0px #4a4d4ec4;
+          span {
+            @include font("text");
+            margin-left: 10px;
+            font-size: 0.9rem;
+          }
+        }
+        .arrow {
+          @include arrow;
+        }
+      }
+    }
+    #options {
+      display: flex;
+      flex-direction: column;
+      .section {
+        display: flex;
+        align-items: center;
+        height: 45px;
+        padding: 0 14px;
+        text-decoration: none;
+        color: $text_grey;
+        div {
+          width: 20px;
+          height: 20px;
+          @include bg;
+        }
+        span {
+          @include font("text");
+          font-size: 0.9rem;
+          margin: 0;
+          margin-left: 10px;
+        }
+      }
+    }
+    #links {
+      display: flex;
+      flex-direction: column;
+      background-color: $light_grey;
+      padding: 15px 45px;
+      a {
+        @include font("text");
+        font-size: 0.9rem;
+        color: $text_grey;
+        text-decoration: none;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+    }
+    #hotLine {
+      text-decoration: none;
+      margin-top: auto;
+      display: flex;
+      height: 45px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 14px;
+      #mobilePhoneNubmer {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        #helperIcon {
+          width: 20px;
+          height: 20px;
+          @include bg;
+          margin-right: 5px;
+          background-image: url("/img/files/helper.png");
+        }
+        span {
+          @include font("text");
+          color: $text_grey;
+          font-size: 14px;
+        }
+      }
+      #callMeBack {
+        span {
+          @include font("text");
+          color: $text_grey;
+          font-size: 14px;
+          color: $red;
+        }
+      }
+    }
+  }
+  #catalog {
+    z-index: 101;
+    overflow: hidden;
+    display: none;
+    // display: flex;
+    flex-direction: column;
+    background-color: $white;
+    width: 95vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    #catalog2 {
+      position: absolute;
+      width: 95vw;
+      height: 100vh;
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      z-index: 15;
+      left: 95vw;
+      transition: 0.4s left;
+      #headerOfCatalog2 {
+        display: flex;
+        background-color: $red;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        button {
+          @include crossBtn;
+          background-image: url("/img/files/arrow_w.png");
+          position: absolute;
+          left: 15px;
+          transform: rotate(90deg);
+        }
+        h3 {
+          @include font("header");
+          color: $white;
+        }
+      }
+      .catalogElement {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding: 0 15px;
+        span {
+          text-align: center;
+          color: $text_grey;
+          @include font("text");
+          font-size: 0.9rem;
+        }
+      }
+    }
+    #headerOfCatalog {
+      display: flex;
+      background-color: $red;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+      button {
+        @include crossBtn;
+        background-image: url("/img/files/crossWhite.svg");
+        position: absolute;
+        left: 15px;
+      }
+      h3 {
+        @include font("header");
+        color: $white;
+      }
+    }
+    .catalogElement {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      padding: 0 15px;
+      span {
+        flex: 1;
+        text-align: center;
+        color: $text_grey;
+        @include font("text");
+        font-size: 0.9rem;
+      }
+      .cotalogPhoto {
+        width: 25px;
+        height: 25px;
+        @include bg;
+      }
+      .toCatalogElement {
+        width: 15px;
+        height: 15px;
+        @include bg;
+        background-image: url("/img/files/arrow.png");
+        transform: rotate(-90deg);
+      }
+    }
+    hr {
+      background-color: $grey;
+      border: none;
+      height: 1px;
+      margin: 0;
+    }
+  }
+  #searchField {
+    z-index: 101;
+    display: none;
+    // display: flex;
+    padding: 10px 15px;
     box-sizing: border-box;
     align-items: center;
-    justify-content: space-around;
-    #mobileSection1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        #logo {
-            width: 35px;
-            height: 35px;
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-        #mobileCatalog {
-            margin-left: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50px;
-            img {
-                width: 15px;
-                height: 15px;
-            }
-            span {
-                color: $red;
-                @include font("text");
-                margin-left: 5px;
-            }
-        }
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+    background-color: $white;
+    #searchText {
+      flex: 1;
+      @include input;
     }
-    #chooseCityBg {
-        display: none;
-        // display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $window_bg;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 15;
-        width: 100vw;
-        height: 100vh;
-        #chooseCity {
+    #searchReset {
+      @include crossBtn;
+      background-image: url("/img/files/crossRed.svg");
+      outline: none;
+      margin: 0 5px;
+    }
+    #searchSubmit {
+      margin: 0 5px;
+      @include crossBtn;
+      background-image: url("/img/files/search.svg");
+      outline: none;
+    }
+    #resultsOfSearch {
+      top: 50px;
+      left: 0;
+      position: absolute;
+      width: 100vw;
+      background-color: $light_grey;
+      box-sizing: border-box;
+      padding: 10px 15px;
+      max-height: 70vh;
+      overflow: scroll;
+      h3 {
+        @include font("header");
+        color: $text_grey;
+      }
+      #resultItems {
+        display: flex;
+        flex-direction: column;
+        .item {
+          text-decoration: none;
+          color: $text_grey;
+          @include font("text");
+          font-size: 0.9rem;
+          display: flex;
+          background-color: $white;
+          box-sizing: border-box;
+          padding: 8px;
+          border: 1px solid $text_light_grey;
+          img {
+            width: 75px;
+            height: 75px;
+          }
+          .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
             overflow: hidden;
-            width: 75vw;
-            height: 75vh;
-            background-color: #fff;
-            #chooseHeaderSection {
-                padding: 0 15px;
-                height: 35px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                .location {
-                    @include locationSign;
-                }
-                h5 {
-                    @include font("text");
-                    margin: 0;
-                }
-                button {
-                    @include crossBtn;
-                }
-            }
-            hr {
-                @include hr;
-            }
-            #cities {
-                padding: 5px 15px;
-                input {
-                    width: 100%;
-                    margin: 25px 0 5px;
-                    @include input;
-                }
-                #cityList {
-                    margin-top: 15px;
-                    overflow-y: scroll;
-                    height: 48vh;
-                    .city {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        height: 50px;
-                        span {
-                            margin-left: 15px;
-                            @include font("text");
-                            font-size: 0.9rem;
-                            color: $text_grey;
-                        }
-                        b {
-                            margin-left: 15px;
-                            @include font("text");
-                            font-size: 0.8rem;
-                            color: $text_grey;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    #mobileSection2 {
-        display: flex;
-        justify-content: center;
-        align-items: cneter;
-        #searchIcon {
-            width: 25px;
-            height: 25px;
-            margin-right: 15px;
-        }
-        #menuButton {
-            width: 25px;
-            height: 25px;
-        }
-    }
-    #greyBackgound {
-        display: none;
-        background-color: $window_bg;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-    }
-    .verticalDiv {
-        width: 0.8px;
-        height: 20.8px;
-        background-color: $grey;
-    }
-    #mobileMenu1 {
-        // display: flex;
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        width: 96vw;
-        height: 100vh;
-        background-color: $white;
-        right: 0;
-        top: 0;
-        #userSection {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 50px;
-            padding: 2px 14px;
-            a {
-                margin-left: 30px;
-                text-decoration: none;
-                color: $text_grey;
-                @include font("header");
-                &::before {
-                    content: "";
-                    width: 25px;
-                    height: 25px;
-                    background-image: url("/img/files/user.png");
-                    @include bg;
-                    position: absolute;
-                    left: 10px;
-                    top: 14px;
-                }
-            }
-            button {
-                @include crossBtn;
-            }
-        }
-        hr {
-            @include hr;
-        }
-        #locationSection {
-            display: flex;
-            align-items: center;
-            padding: 2px 14px;
-            .locatonSection {
-                display: flex;
-                flex: 1;
-                align-items: center;
-                height: 45px;
-                p {
-                    @include font("text");
-                    font-size: 0.9rem;
-                    margin: 0;
-                    margin-left: 10px;
-                }
-            }
-            #mainCity {
-                .locationSign {
-                    @include locationSign;
-                }
-            }
-            #chooseLanguage {
-                display: flex;
-                justify-content: space-between;
-                position: relative;
-                #panelWithAnotherLanguage {
-                    display: none;
-                    align-items: center;
-                    width: 100%;
-                    height: 50px;
-                    top: 50px;
-                    background-color: $white;
-                    position: absolute;
-                    box-shadow: 1px 1px 4px 0px #4a4d4ec4;
-                    span {
-                        @include font("text");
-                        margin-left: 10px;
-                        font-size: 0.9rem;
-                    }
-                }
-                .arrow {
-                    @include arrow;
-                }
-            }
-        }
-        #options {
-            display: flex;
-            flex-direction: column;
-            .section {
-                display: flex;
-                align-items: center;
-                height: 45px;
-                padding: 0 14px;
-                text-decoration: none;
-                color: $text_grey;
-                div {
-                    width: 20px;
-                    height: 20px;
-                    @include bg;
-                }
-                span {
-                    @include font("text");
-                    font-size: 0.9rem;
-                    margin: 0;
-                    margin-left: 10px;
-                }
-            }
-        }
-        #links {
-            display: flex;
-            flex-direction: column;
-            background-color: $light_grey;
-            padding: 15px 45px;
-            a {
-                @include font("text");
-                font-size: 0.9rem;
-                color: $text_grey;
-                text-decoration: none;
-                height: 40px;
-                display: flex;
-                align-items: center;
-            }
-        }
-        #hotLine {
-            text-decoration: none;
-            margin-top: auto;
-            display: flex;
-            height: 45px;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 14px;
-            #mobilePhoneNubmer {
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
-                #helperIcon {
-                    width: 20px;
-                    height: 20px;
-                    @include bg;
-                    margin-right: 5px;
-                    background-image: url("/img/files/helper.png");
-                }
-                span {
-                    @include font("text");
-                    color: $text_grey;
-                    font-size: 14px;
-                }
-            }
-            #callMeBack {
-                span {
-                    @include font("text");
-                    color: $text_grey;
-                    font-size: 14px;
-                    color: $red;
-                }
-            }
-        }
-    }
-    #catalog {
-        overflow: hidden;
-        display: none;
-        // display: flex;
-        flex-direction: column;
-        background-color: $white;
-        width: 95vw;
-        height: 100vh;
-        position: absolute;
-        left: 0;
-        top: 0;
-        #catalog2 {
-            position: absolute;
-            width: 95vw;
-            height: 100vh;
-            background-color: $white;
-            display: flex;
-            flex-direction: column;
-            z-index: 15;
-            left: 95vw;
-            transition: 0.4s left;
-            #headerOfCatalog2 {
-                display: flex;
-                background-color: $red;
-                height: 50px;
-                align-items: center;
-                justify-content: center;
-                button {
-                    @include crossBtn;
-                    background-image: url("/img/files/arrow_w.png");
-                    position: absolute;
-                    left: 15px;
-                    transform: rotate(90deg);
-                }
-                h3 {
-                    @include font("header");
-                    color: $white;
-                }
-            }
-            .catalogElement {
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                height: 50px;
-                padding: 0 15px;
-                span {
-                    text-align: center;
-                    color: $text_grey;
-                    @include font("text");
-                    font-size: 0.9rem;
-                }
-            }
-        }
-        #headerOfCatalog {
-            display: flex;
-            background-color: $red;
-            height: 50px;
-            align-items: center;
-            justify-content: center;
-            button {
-                @include crossBtn;
-                background-image: url("/img/files/crossWhite.svg");
-                position: absolute;
-                left: 15px;
-            }
-            h3 {
-                @include font("header");
-                color: $white;
-            }
-        }
-        .catalogElement {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            height: 50px;
-            padding: 0 15px;
-            span {
-                flex: 1;
-                text-align: center;
-                color: $text_grey;
-                @include font("text");
-                font-size: 0.9rem;
-            }
-            .cotalogPhoto {
-                width: 25px;
-                height: 25px;
-                @include bg;
-            }
-            .toCatalogElement {
-                width: 15px;
-                height: 15px;
-                @include bg;
-                background-image: url("/img/files/arrow.png");
-                transform: rotate(-90deg);
-            }
-        }
-        hr {
-            background-color: $grey;
-            border: none;
-            height: 1px;
-            margin: 0;
-        }
-    }
-    #searchField {
-        display: none;
-        // display: flex;
-        padding: 10px 15px;
-        box-sizing: border-box;
-        align-items: center;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 50px;
-        background-color: $white;
-        #searchText {
             flex: 1;
-            @include input;
-        }
-        #searchReset {
-            @include crossBtn;
-            background-image: url("/img/files/crossRed.svg");
-            outline: none;
-            margin: 0 5px;
-        }
-        #searchSubmit {
-            margin: 0 5px;
-            @include crossBtn;
-            background-image: url("/img/files/search.svg");
-            outline: none;
-        }
-        #resultsOfSearch {
-            top: 50px;
-            left: 0;
-            position: absolute;
-            width: 100vw;
-            background-color: $light_grey;
-            box-sizing: border-box;
-            padding: 10px 15px;
-            max-height: 70vh;
-            overflow: scroll;
-            h3 {
-                @include font("header");
-                color: $text_grey;
+            padding-left: 15px;
+            .nameOfItem {
+              margin: 0;
             }
-            #resultItems {
-                display: flex;
-                flex-direction: column;
-                .item {
-                    text-decoration: none;
-                    color: $text_grey;
-                    @include font("text");
-                    font-size: 0.9rem;
-                    display: flex;
-                    background-color: $white;
-                    box-sizing: border-box;
-                    padding: 8px;
-                    border: 1px solid $text_light_grey;
-                    img {
-                        width: 75px;
-                        height: 75px;
-                    }
-                    .info {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-evenly;
-                        overflow: hidden;
-                        flex: 1;
-                        padding-left: 15px;
-                        .nameOfItem {
-                            margin: 0;
-                        }
-                        .price {
-                            margin: 0;
-                            color: $red;
-                        }
-                    }
-                }
-                p {
-                    font-size: 0.9rem;
-                    @include font("text");
-                    color: $text_grey;
-                }
+            .price {
+              margin: 0;
+              color: $red;
             }
+          }
         }
+        p {
+          font-size: 0.9rem;
+          @include font("text");
+          color: $text_grey;
+        }
+      }
     }
+  }
 }
 
 @media (min-width: 375px) {
-    #mobileHeader {
-        #mobileSection1 {
-            #mobileCatalog {
-                margin-left: 25px;
-            }
-        }
-        #mobileSection1 {
-            #mobileCatalog {
-                margin-right: 25px;
-            }
-        }
+  #mobileHeader {
+    #mobileSection1 {
+      #mobileCatalog {
+        margin-left: 25px;
+      }
     }
+    #mobileSection1 {
+      #mobileCatalog {
+        margin-right: 25px;
+      }
+    }
+  }
 }
 @media (min-width: 768px) {
-    #mobileHeader {
-        #searchField {
-            padding: 10px 100px;
-        }
-        #catalog,
-        #mobileMenu1 {
-            width: 76vw;
-            #catalog2 {
-                width: 76vw;
-            }
-        }
+  #mobileHeader {
+    #searchField {
+      padding: 10px 100px;
     }
+    #catalog,
+    #mobileMenu1 {
+      width: 76vw;
+      #catalog2 {
+        width: 76vw;
+      }
+    }
+  }
 }
 @import "headerPC";
