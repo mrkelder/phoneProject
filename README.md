@@ -17,6 +17,6 @@ Follow the instructions below to run the project.
 
 Here you can see the whole git flow of the current project
 
-![The git flow itself](/img/files/gitFlow.png "git flow")
+![The git flow itself](/static/img/files/gitFlow.png "git flow")
 
 ## Brnches
