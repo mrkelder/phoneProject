@@ -1232,5 +1232,68 @@ button {
     width: 1500px;
   }
 }
+#quality {
+  display: flex;
+  flex-direction: column;
+  background-color: #4a4d4e;
+  padding: 15px 10px;
+  box-sizing: border-box;
+}
+#quality .qualityBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  margin: 5px 0;
+  padding: 10px 15px;
+}
+#quality .qualityBlock:nth-child(1) .qualityBlockImg {
+  background-image: url("/img/files/truck.png");
+}
+#quality .qualityBlock:nth-child(2) .qualityBlockImg {
+  background-image: url("/img/files/like.png");
+}
+#quality .qualityBlock:nth-child(3) .qualityBlockImg {
+  background-image: url("/img/files/checked.png");
+}
+#quality .qualityBlock .qualityBlockImg {
+  margin-right: 15px;
+  width: 35px;
+  height: 35px;
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+#quality .qualityBlock p {
+  margin: 0;
+  color: white;
+  font-family: "text", Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 1024px) {
+  #quality {
+    padding: 25px;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #quality .qualityBlock {
+    width: 180px;
+    flex-direction: column;
+    border: none;
+  }
+  #quality .qualityBlock .qualityBlockImg {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  #quality .qualityBlock p {
+    text-align: center;
+  }
+}
+@media (min-width: 1500px) {
+  #quality {
+    margin: auto;
+    width: 1500px;
+  }
+}
 
 /*# sourceMappingURL=index.css.map */

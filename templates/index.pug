@@ -10,6 +10,16 @@ html(lang=`${ header.lang === 'ua' ? 'ua' : 'ru'}`)
         include include/slider.pug
         main
           +slider(slides)
+          #quality
+            .qualityBlock
+              .qualityBlockImg
+              p #{header.lang === 'ua' ? 'Поповнення рахунку без комісії' :'Пополнение счета без комиссии'}
+            .qualityBlock
+              .qualityBlockImg
+              p #{header.lang === 'ua' ? 'Безкоштовна доставка в магазини' :'Бесплатная доставка в магазины'}
+            .qualityBlock
+              .qualityBlockImg
+              p #{header.lang === 'ua' ? 'Офіційна гарантія від виробника' :'Официальная гарантия от производителя'}
         include include/footer.pug
         script(src="/js/slider.js")
         script(src="/js/index.js")
