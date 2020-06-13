@@ -1,5 +1,4 @@
 .slider {
-  height: 510px;
   overflow: hidden;
   .slider_block {
     display: inline-flex;
@@ -16,7 +15,7 @@
     display: flex;
     justify-content: center;
     top: -30px;
-    height: 20px;
+    height: 0;
     margin: auto;
     position: relative;
   }
