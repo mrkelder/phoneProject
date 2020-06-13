@@ -1197,7 +1197,6 @@ button {
 }
 
 .slider {
-  height: 510px;
   overflow: hidden;
 }
 .slider .slider_block {
@@ -1215,7 +1214,7 @@ button {
   display: flex;
   justify-content: center;
   top: -30px;
-  height: 20px;
+  height: 0;
   margin: auto;
   position: relative;
 }
