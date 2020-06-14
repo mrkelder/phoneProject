@@ -1248,10 +1248,10 @@ button {
   padding: 10px 15px;
 }
 #quality .qualityBlock:nth-child(1) .qualityBlockImg {
-  background-image: url("/img/files/truck.png");
+  background-image: url("/img/files/like.png");
 }
 #quality .qualityBlock:nth-child(2) .qualityBlockImg {
-  background-image: url("/img/files/like.png");
+  background-image: url("/img/files/truck.png");
 }
 #quality .qualityBlock:nth-child(3) .qualityBlockImg {
   background-image: url("/img/files/checked.png");
