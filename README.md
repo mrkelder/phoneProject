@@ -1,3 +1,9 @@
+# ATTENTION
+
+This project is now closed due to lost database and lack of time. But this is not end!
+The same project will be written with using React.js so I'm not gonna give up now.
+You can now find it in my git account
+
 # Phone Shop Project
 
 This is an online shop project , that is being written in nodeJS. This is an open-source project.
