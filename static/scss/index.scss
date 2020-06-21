@@ -1,5 +1,6 @@
 @import "init";
 @import "slider";
+@import "item";
 
 #quality {
   display: flex;
@@ -43,6 +44,19 @@
       @include font("text");
     }
   }
+}
+
+#best_for_today {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 15px;
+  color: $text_grey;
+  font-weight: normal;
+  @include font("text");
+}
+
+#topItemsSlider{
+  margin: 15px;
 }
 
 @media (min-width: 1024px) {

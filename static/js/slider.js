@@ -1,7 +1,10 @@
 class Slider {
-  constructor({ slider, slider_block }) {
+  constructor({ slider, slider_block, slider_panel, render_func }) {
     this.slider = slider; // Slider
     this.slider_block = slider_block; // Sliding element
+    this.slider_panel = slider_panel; // Pannel with buttons
+    this.render_func = render_func; // Function to render slides
+    this.buttons; // Radio buttons' cursor
 
     this.isClicked = false; // Is the slider being in action
     this.posStart = 0; // The end position 
@@ -41,41 +44,30 @@ class Slider {
         }
         break;
     }
-    for (let i of $('.slider_btn')) {
-      i.checked = false;
+    if (this.buttons !== undefined) {
+      for (let i of this.buttons) {
+        i.checked = false;
+      }
+      this.buttons[this.currentSlide].checked = true;
     }
-    $('.slider_btn')[this.currentSlide].checked = true;
   }
 
   createSlides() {
     // Creates slides
-    try {
-      JSON.parse(this.slider.attr('data-slides')).photos.forEach((i, index) => {
-        // Renders slides
-        if (i.length === 0 || i === undefined) this.slider_block.append(`<picture class="slide"><img style="width: 100%" src="/img/files/notFound.jpg" alt="not found" height="100%" width="100%"/></picture>`);
-        else this.slider_block.append(`
-          <picture class="slide">
-            <source srcset="/img/promotions/${i.m} 1x" media="(max-width: 768px)"/>
-            <source srcset="/img/promotions/${i.pc} 1x" media="(min-width: 768px)" draggble="false"/>
-            <img style="width: 100%" src="/img/files/notFound.jpg" alt="not found"/>
-          </picture>
-        `);
-        $('.slider_pannel').append(`<input type="radio" name="slier" value="${index}" class="slider_btn"/>`);
-      });
-    }
-    catch (err) {
-      console.error(err.message);
-      this.slider_block.append(`<picture class="slide"><img src="/img/files/notFound.jpg" alt="not found" height="100%" width="100%"/></picture>`);
-    }
-    finally {
-      $('.slider_btn')[this.currentSlide].checked = true;
-    }
-    $('.slider_btn').on('input', e => {
-      const value = Number(e.target.value);
-      this.slider_block.css('transform', `translate3d(-${value * this.sector}px , 0 , 0)`);
-      this.currentSlide = value;
-      this.misha = parseInt(this.slider_block[0].style.transform.match(/-?\d{0,}px/)[0]);
+    this.buttons = this.render_func({
+      slider: this.slider,
+      slider_block: this.slider_block,
+      currentSLide: this.currentSlide,
+      slider_panel: this.slider_panel,
     });
+    if (this.buttons !== undefined)
+      this.buttons.on('input', e => {
+        const value = Number(e.target.value);
+        this.slider_block.css('transform', `translate3d(-${value * this.sector}px , 0 , 0)`);
+        this.currentSlide = value;
+        this.misha = parseInt(this.slider_block[0].style.transform.match(/-?\d{0,}px/)[0]);
+      });
+
     this.slider_block.find('.slide').css('width', this.sector); // Gets width of one slidec
     $('img').on('dragstart', e => { e.preventDefault(); }); // Prevents photo dragging
   }

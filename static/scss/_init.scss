@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: $light_grey;
+  overflow-x: hidden;
 }
 button {
   outline: none;
@@ -70,6 +71,16 @@ button {
   @include font("text");
   font-size: 0.9rem;
   color: $text_grey;
+}
+
+@mixin redBtn {
+  cursor: pointer;
+  border: none;
+  background-color: $red;
+  @include font('text');
+  font-size: 1rem;
+  color: $white;
+  padding: 10px;
 }
 
 @import "header";

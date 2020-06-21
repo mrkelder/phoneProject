@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  overflow-x: hidden;
 }
 
 button {
@@ -1232,6 +1233,72 @@ button {
     width: 1500px;
   }
 }
+.top_item {
+  padding: 25px 27px;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #4a4d4e;
+}
+.top_item .item_photo {
+  height: 100%;
+  width: 100%;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.top_item p {
+  font-size: 1.2rem;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  margin: 5px 0 10px;
+}
+.top_item span {
+  margin: 5px 0 10px;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #e60000;
+}
+.top_item .item_rating .star {
+  width: 15px;
+  height: 15px;
+}
+.top_item .top_item_buttons {
+  display: flex;
+  height: 46px;
+  justify-content: space-between;
+}
+.top_item .top_item_buttons * {
+  height: 100%;
+}
+.top_item .top_item_buttons .details {
+  width: 123px;
+  cursor: pointer;
+  border: none;
+  background-color: #e60000;
+  font-family: "text", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: white;
+  padding: 10px;
+}
+.top_item .top_item_buttons .favorite,
+.top_item .top_item_buttons .compare {
+  width: 46px;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  border: 1px solid #4a4d4e;
+  border-radius: 5px;
+  background-color: transparent;
+}
+.top_item .top_item_buttons .favorite {
+  background-image: url("/img/files/favorite.png");
+}
+.top_item .top_item_buttons .compare {
+  background-image: url("/img/files/scales.png");
+}
+
 #quality {
   display: flex;
   flex-direction: column;
@@ -1268,6 +1335,19 @@ button {
   margin: 0;
   color: white;
   font-family: "text", Arial, Helvetica, sans-serif;
+}
+
+#best_for_today {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 15px;
+  color: #333;
+  font-weight: normal;
+  font-family: "text", Arial, Helvetica, sans-serif;
+}
+
+#topItemsSlider {
+  margin: 15px;
 }
 
 @media (min-width: 1024px) {

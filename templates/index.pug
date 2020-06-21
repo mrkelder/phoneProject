@@ -8,8 +8,9 @@ html(lang=`${ header.lang === 'ua' ? 'ua' : 'ru'}`)
     body
         include include/header.pug
         include include/slider.pug
+        include include/item.pug
         main
-          +slider(slides)
+          +slider(slides , 'slider' , 'slider_block' , 'slider_panel')
           #quality
             .qualityBlock
               .qualityBlockImg
@@ -20,6 +21,9 @@ html(lang=`${ header.lang === 'ua' ? 'ua' : 'ru'}`)
             .qualityBlock
               .qualityBlockImg
               p #{header.lang === 'ua' ? 'Офіційна гарантія від виробника' :'Официальная гарантия от производителя'}
+          p#best_for_today #{header.lang === 'ua' ? 'Найкращі пропозиції на сьогодні' :'Лучшие предложения на сегодня'}
+          +slider(top_items , 'topItemsSlider' ,'topItemsSliding' , 'topItemsPanel')
         include include/footer.pug
         script(src="/js/slider.js")
+        script(src="/js/item.js")
         script(src="/js/index.js")

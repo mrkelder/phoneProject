@@ -1,0 +1,57 @@
+.top_item {
+  padding: 25px 27px;
+  box-sizing: border-box;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $grey;
+  .item_photo {
+    height: 100%;
+    width: 100%;
+    @include bg;
+  }
+  p {
+    font-size: 1.2rem;
+    @include font("text");
+    margin: 5px 0 10px;
+  }
+  span {
+    margin: 5px 0 10px;
+    @include font("text");
+    font-size: 1.1rem;
+    color: $red;
+  }
+  .item_rating {
+    .star {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  .top_item_buttons {
+    display: flex;
+    height: 46px;
+    justify-content: space-between;
+    * {
+      height: 100%;
+    }
+    .details {
+      width: 123px;
+      @include redBtn;
+    }
+    .favorite,
+    .compare {
+      width: 46px;
+      @include bg;
+      background-size: 65%;
+      border: 1px solid $grey;
+      border-radius: 5px;
+      background-color: transparent;
+    }
+    .favorite {
+      background-image: url("/img/files/favorite.png");
+    }
+    .compare{
+      background-image: url("/img/files/scales.png");
+    }
+  }
+}

@@ -1,6 +1,6 @@
-mixin slider(slides)
-  div(data-slides=`${JSON.stringify(slides)}`).slider
-    .slider_block
-    .slider_pannel
+mixin slider(slides , slider , slider_block , slider_pannel)
+  div(data-slides=`${JSON.stringify(slides)}` id=`${slider}`).slider
+    div(id=`${slider_block}`).slider_block
+    div(id=`${slider_pannel}`).slider_pannel
       
         
